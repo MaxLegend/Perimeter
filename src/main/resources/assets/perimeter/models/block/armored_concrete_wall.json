@@ -1,0 +1,50 @@
+{
+	"credit": "Model by Tesmio",
+	"parent": "block/cube_all",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "perimeter:block/armored_concrete_wall",
+		"particle": "perimeter:block/armored_concrete_wall"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 3.5],
+			"to": [1, 16, 12.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 9]},
+			"faces": {
+				"north": {"uv": [0.5, 0, 0, 8], "texture": "#0"},
+				"east": {"uv": [14, 0, 9.5, 8], "texture": "#0"},
+				"south": {"uv": [0.5, 0, 0, 8], "texture": "#0"},
+				"west": {"uv": [5.5, 0, 1, 8], "texture": "#0"},
+				"up": {"uv": [8, 4, 8.5, 0], "texture": "#0"},
+				"down": {"uv": [8, 7.5, 8.5, 3.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [15, 0, 3.5],
+			"to": [16, 16, 12.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 0, 9]},
+			"faces": {
+				"north": {"uv": [0.5, 0, 0, 8], "texture": "#0"},
+				"east": {"uv": [6.5, 0, 2, 8], "texture": "#0"},
+				"south": {"uv": [0.5, 0, 0, 8], "texture": "#0"},
+				"west": {"uv": [14, 0, 9.5, 8], "texture": "#0"},
+				"up": {"uv": [8, 4.5, 8.5, 0.5], "texture": "#0"},
+				"down": {"uv": [8, 7.5, 8.5, 3.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [1, 0, 4],
+			"to": [15, 16, 11.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [14, 0, 7]},
+			"faces": {
+				"north": {"uv": [8.5, 8, 15.5, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 3.375, 8], "texture": "#0"},
+				"south": {"uv": [0.5, 0, 7.5, 8], "texture": "#0"},
+				"west": {"uv": [0, 0, 3.375, 8], "texture": "#0"},
+				"up": {"uv": [9, 0.5, 16, 3.875], "texture": "#0"},
+				"down": {"uv": [8.5, 4, 15.5, 7.375], "texture": "#0"}
+			}
+		}
+	]
+}

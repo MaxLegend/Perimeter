@@ -1,0 +1,9 @@
+{
+  "multipart": [
+    { "when": { "north": true }, "apply": { "model": "perimeter:block/armored_concrete_column/armored_concrete_column_north" } },
+    { "when": { "south": true }, "apply": { "model": "perimeter:block/armored_concrete_column/armored_concrete_column_south" } },
+    { "when": { "east": true },  "apply": { "model": "perimeter:block/armored_concrete_column/armored_concrete_column_east" } },
+    { "when": { "west": true },  "apply": { "model": "perimeter:block/armored_concrete_column/armored_concrete_column_west" } },
+    { "apply": { "model": "perimeter:block/armored_concrete_column/armored_concrete_column" } }
+  ]
+}

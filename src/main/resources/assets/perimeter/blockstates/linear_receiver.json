@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=down":  { "model": "perimeter:block/linear_receiver", "x": 90, "y": 0 },
+    "facing=up":    { "model": "perimeter:block/linear_receiver", "x": 270, "y": 0 },
+    "facing=north": { "model": "perimeter:block/linear_receiver", "x": 0, "y": 0 },
+    "facing=south": { "model": "perimeter:block/linear_receiver", "x": 0, "y": 180 },
+    "facing=west":  { "model": "perimeter:block/linear_receiver", "x": 0, "y": 270 },
+    "facing=east":  { "model": "perimeter:block/linear_receiver", "x": 0, "y": 90 }
+  }
+}
