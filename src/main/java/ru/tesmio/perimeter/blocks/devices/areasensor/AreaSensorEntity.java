@@ -16,7 +16,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import ru.tesmio.perimeter.core.RegBlockEntitys;
+import ru.tesmio.perimeter.core.registration.RegBlockEntitys;
 
 import java.util.List;
 
@@ -45,7 +45,7 @@ public class AreaSensorEntity extends BlockEntity {
             level.updateNeighborsAt(worldPosition, state.getBlock());
         }
     }
-     // по умолчанию
+    // по умолчанию
 
     public int getRange() {
         return RANGE;
@@ -61,9 +61,11 @@ public class AreaSensorEntity extends BlockEntity {
         super.load(tag);
         RANGE = tag.getInt("Range");
     }
+
     public ContainerData getContainerData() {
         return containerData;
     }
+
     private final ContainerData containerData = new ContainerData() {
         @Override
         public int get(int index) {
@@ -80,11 +82,13 @@ public class AreaSensorEntity extends BlockEntity {
             return 1;
         }
     };
+
     @Override
     protected void saveAdditional(CompoundTag tag) {
         super.saveAdditional(tag);
         tag.putInt("Range", RANGE);
     }
+
     private boolean detectVisibleEntity(Level level, BlockPos pos) {
         AABB scanArea = new AABB(pos).inflate(RANGE);
         List<Entity> entities = level.getEntities((Entity) null, scanArea, entity -> !(entity instanceof ItemEntity));

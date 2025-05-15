@@ -6,7 +6,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import ru.tesmio.perimeter.core.PerimeterItems;
-import ru.tesmio.perimeter.core.RegBlockEntitys;
+import ru.tesmio.perimeter.core.registration.RegBlockEntitys;
 import ru.tesmio.perimeter.items.CircuitComponent;
 
 import java.util.ArrayList;

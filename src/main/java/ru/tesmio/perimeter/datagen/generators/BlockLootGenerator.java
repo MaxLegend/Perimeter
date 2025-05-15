@@ -3,8 +3,9 @@ package ru.tesmio.perimeter.datagen.generators;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
-import ru.tesmio.perimeter.core.RegBlocks;
 import net.minecraftforge.registries.RegistryObject;
+import ru.tesmio.perimeter.core.registration.RegBlocks;
+
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -14,6 +15,7 @@ public class BlockLootGenerator extends BlockLootSubProvider {
     public BlockLootGenerator() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
+
     @Override
     protected void generate() {
         Stream.of(
@@ -25,6 +27,7 @@ public class BlockLootGenerator extends BlockLootSubProvider {
                 .map(RegistryObject::get)
                 .forEach(this::dropSelf);
     }
+
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return Stream.of(

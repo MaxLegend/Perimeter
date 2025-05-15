@@ -32,10 +32,10 @@ import net.minecraftforge.network.PacketDistributor;
 import ru.tesmio.perimeter.blocks.devices.areasensor.screen.AreaSensorMenu;
 import ru.tesmio.perimeter.core.NetworkHandler;
 import ru.tesmio.perimeter.network.packets.AreaSensorPacketClient;
-import ru.tesmio.perimeter.util.IPerimeterDevice;
+import ru.tesmio.perimeter.util.IConnectedToPostDevice;
 
 
-public class AreaSensor extends Block implements EntityBlock, IPerimeterDevice {
+public class AreaSensor extends Block implements EntityBlock, IConnectedToPostDevice {
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
 
     // Настройки блока: прочность и необходимость правильного инструмента

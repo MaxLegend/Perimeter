@@ -9,14 +9,14 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import ru.tesmio.perimeter.blocks.devices.vibrocable.network.IVibrationNetworkMember;
-import ru.tesmio.perimeter.blocks.devices.vibrocable.network.VibrationNetworkSystem;
-import ru.tesmio.perimeter.core.RegBlockEntitys;
+import ru.tesmio.perimeter.core.blocknetwork.BlockNetworkSystem;
+import ru.tesmio.perimeter.core.blocknetwork.IBlockNetworkMember;
+import ru.tesmio.perimeter.core.registration.RegBlockEntitys;
 
 import java.util.List;
 
-//что то перестало работать. Закинуть в gpt весь код и прокомментировать и прокидать отладку чтоб вычислить в чем дело
-public class VibrationCableEntity extends BlockEntity implements IVibrationNetworkMember {
+
+public class VibrationCableEntity extends BlockEntity implements IBlockNetworkMember {
     private BlockPos controllerPos;
     private boolean active = false;
     private int signalTicks = 0;
@@ -45,7 +45,7 @@ public class VibrationCableEntity extends BlockEntity implements IVibrationNetwo
     public void triggerSignal() {
         if (level == null || level.isClientSide) return;
         //   System.out.println("[VibrationCable] Triggering signal for controller at: " + getController());
-        VibrationNetworkSystem.get(level).transmitSignal(level, getController());
+        BlockNetworkSystem.get(level).transmitSignal(level, getBlockInNetwork());
     }
 
     @Override
@@ -65,25 +65,19 @@ public class VibrationCableEntity extends BlockEntity implements IVibrationNetwo
         }
     }
 
+    @Override
     public void pulse() {
         this.active = true;
         this.signalTicks = 5; // сигнал держится 5 тиков
     }
 
-    @Override
-    public void setController(BlockPos controller) {
-        this.controllerPos = controller;
-    }
-
     public void tick() {
-        //     System.out.println("[VibrationCable] Tick at " + worldPosition);
         if (signalTicks > 0) {
             signalTicks--;
             if (signalTicks == 0) {
                 active = false;
             }
         }
-        // Проверка сущностей в зоне 3×3×1
         if (level == null || level.isClientSide) return;
 
         BlockState state = getBlockState();
@@ -109,13 +103,18 @@ public class VibrationCableEntity extends BlockEntity implements IVibrationNetwo
 
         List<Entity> entities = level.getEntities((Entity) null, detectionBox, Entity::isAlive);
         if (!entities.isEmpty()) {
-            //      System.out.println("[VibrationCable] Detected entities: " + entities.size());
             triggerSignal();
         }
     }
 
+
     @Override
-    public BlockPos getController() {
+    public void setBlockInNetwork(BlockPos pos) {
+        this.controllerPos = pos;
+    }
+
+    @Override
+    public BlockPos getBlockInNetwork() {
         return controllerPos == null ? getBlockPos() : controllerPos;
     }
 }

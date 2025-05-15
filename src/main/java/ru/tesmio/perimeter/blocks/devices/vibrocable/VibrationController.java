@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.tesmio.perimeter.blocks.devices.vibrocable.network.VibrationNetworkSystem;
+import ru.tesmio.perimeter.core.blocknetwork.BlockNetworkSystem;
 
 public class VibrationController extends Block implements EntityBlock {
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
@@ -29,7 +29,7 @@ public class VibrationController extends Block implements EntityBlock {
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         if (!level.isClientSide && !state.is(newState.getBlock())) {
-            VibrationNetworkSystem.get(level).onBlockRemoved(level, pos);
+            BlockNetworkSystem.get(level).onBlockRemoved(level, pos);
         }
         super.onRemove(state, level, pos, newState, isMoving);
     }
@@ -47,7 +47,7 @@ public class VibrationController extends Block implements EntityBlock {
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
         if (!level.isClientSide) {
-            VibrationNetworkSystem.get(level).onBlockAdded(level, pos);
+            BlockNetworkSystem.get(level).onBlockAdded(level, pos);
         }
     }
 

@@ -13,10 +13,16 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import ru.tesmio.perimeter.blocks.concretechest.ConcreteChestScreen;
 import ru.tesmio.perimeter.blocks.devices.areasensor.screen.AreaSensorScreen;
-import ru.tesmio.perimeter.core.*;
+import ru.tesmio.perimeter.core.NetworkHandler;
 import ru.tesmio.perimeter.core.events.ClientEvents;
+import ru.tesmio.perimeter.core.registration.*;
 
-
+/**
+ * Mod for Minecraft 1.20.1 (Forge 47.4.0). Please contact me if you want to use this code in a commercial project.
+ *
+ * @author Tesmio
+ * @version 1.0
+ */
 @Mod(Perimeter.MODID)
 public class Perimeter {
 
@@ -54,7 +60,7 @@ public class Perimeter {
         event.enqueueWork(() -> {
             MenuScreens.register(RegMenus.AREA_SENSOR_MENU.get(), AreaSensorScreen::new);
             MenuScreens.register(RegMenus.CONCRETE_CHEST_MENU.get(), ConcreteChestScreen::new);
- 
+
         });
         MinecraftForge.EVENT_BUS.addListener(ClientEvents::onRenderWorldLast);
 

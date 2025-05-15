@@ -2,7 +2,14 @@ package ru.tesmio.perimeter.core;
 
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.RegistryObject;
+import ru.tesmio.perimeter.core.registration.RegItems;
 
+/**
+ * The constants are defined here. See registration here ->
+ *
+ * @author Tesmio
+ * @see RegItems
+ */
 public class PerimeterItems {
     public static RegistryObject<Item>
             RAW_IRON_ROD,

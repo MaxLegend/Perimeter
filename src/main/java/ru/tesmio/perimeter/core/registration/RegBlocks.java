@@ -1,4 +1,4 @@
-package ru.tesmio.perimeter.core;
+package ru.tesmio.perimeter.core.registration;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -15,6 +15,8 @@ import ru.tesmio.perimeter.blocks.*;
 import ru.tesmio.perimeter.blocks.concretechest.ConcreteChestBlock;
 import ru.tesmio.perimeter.blocks.concretechest.ConcreteChestItem;
 import ru.tesmio.perimeter.blocks.devices.areasensor.AreaSensor;
+import ru.tesmio.perimeter.blocks.devices.contactfence.ContactFence;
+import ru.tesmio.perimeter.blocks.devices.contactfence.ContactFenceEmitter;
 import ru.tesmio.perimeter.blocks.devices.linearsensor.LinearReceiverBlock;
 import ru.tesmio.perimeter.blocks.devices.linearsensor.LinearTransmitterBlock;
 import ru.tesmio.perimeter.blocks.devices.redstonecable.RedstoneCableBlock;
@@ -24,6 +26,7 @@ import ru.tesmio.perimeter.blocks.devices.soundsensor.SoundSensorBlock;
 import ru.tesmio.perimeter.blocks.devices.spotlight.SpotlightBlock;
 import ru.tesmio.perimeter.blocks.devices.vibrocable.VibrationCable;
 import ru.tesmio.perimeter.blocks.devices.vibrocable.VibrationController;
+import ru.tesmio.perimeter.core.PerimeterBlocks;
 import ru.tesmio.perimeter.items.DefaultBlockItemInfo;
 
 import java.util.function.Supplier;
@@ -80,10 +83,12 @@ public class RegBlocks {
         PerimeterBlocks.VIBRO_CABLE_ITEM = ITEM_BLOCKS.register("vibro_cable_block", () -> new DefaultBlockItemInfo(PerimeterBlocks.VIBRO_CABLE_BLOCK.get(), new Item.Properties(), "info.vibro_cable"));
         PerimeterBlocks.VIBRO_CONTROLLER_BLOCK = BLOCKS_CUSTOM_MODEL.register("vibro_controller_block", VibrationController::new);
         PerimeterBlocks.VIBRO_CONTROLLER_ITEM = ITEM_BLOCKS.register("vibro_controller_block", () -> new DefaultBlockItemInfo(PerimeterBlocks.VIBRO_CONTROLLER_BLOCK.get(), new Item.Properties(), "info.vibro_controller"));
-
         PerimeterBlocks.SOUND_SENSOR = BLOCKS_CUSTOM_MODEL.register("sound_sensor", SoundSensorBlock::new);
         PerimeterBlocks.SOUND_SENSOR_ITEM = ITEM_BLOCKS.register("sound_sensor", () -> new DefaultBlockItemInfo(PerimeterBlocks.SOUND_SENSOR.get(), new Item.Properties(), "info.sound_sensor"));
-
+        PerimeterBlocks.CONTACT_FENCE = BLOCKS_CUSTOM_MODEL.register("contact_fence", ContactFence::new);
+        PerimeterBlocks.CONTACT_FENCE_ITEM = ITEM_BLOCKS.register("contact_fence", () -> new DefaultBlockItemInfo(PerimeterBlocks.CONTACT_FENCE.get(), new Item.Properties(), "info.contact_fence"));
+        PerimeterBlocks.CONTACT_FENCE_EMITTER = BLOCKS_CUSTOM_MODEL.register("contact_fence_emitter", ContactFenceEmitter::new);
+        PerimeterBlocks.CONTACT_FENCE_EMITTER_ITEM = ITEM_BLOCKS.register("contact_fence_emitter", () -> new DefaultBlockItemInfo(PerimeterBlocks.CONTACT_FENCE_EMITTER.get(), new Item.Properties(), "info.contact_fence_emitter"));
 
     }
 

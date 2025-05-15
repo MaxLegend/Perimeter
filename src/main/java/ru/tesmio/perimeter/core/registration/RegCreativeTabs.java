@@ -1,4 +1,4 @@
-package ru.tesmio.perimeter.core;
+package ru.tesmio.perimeter.core.registration;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -10,6 +10,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import ru.tesmio.perimeter.Perimeter;
+import ru.tesmio.perimeter.core.PerimeterItems;
 
 public class RegCreativeTabs {
     //сделать автоматическое добавление блоков и итемов во вкладку

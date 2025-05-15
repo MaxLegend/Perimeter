@@ -16,7 +16,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import ru.tesmio.perimeter.cache.ClientTransmitterCache;
-import ru.tesmio.perimeter.core.RegBlockEntitys;
+import ru.tesmio.perimeter.core.registration.RegBlockEntitys;
 
 import java.util.List;
 

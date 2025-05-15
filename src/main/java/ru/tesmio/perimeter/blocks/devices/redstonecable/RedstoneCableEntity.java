@@ -12,10 +12,15 @@ import net.minecraft.world.level.block.RedStoneWireBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import ru.tesmio.perimeter.core.RegBlockEntitys;
+import ru.tesmio.perimeter.core.registration.RegBlockEntitys;
 
 import java.util.*;
 
+/**
+ * Do not copy this class. I do not know how it works, but it works. :D
+ *
+ * @author Tesmio
+ */
 public class RedstoneCableEntity extends BlockEntity {
     private final List<BlockPos> connections = new ArrayList<>(); // Явные связи с другими кабелями
     private final Set<BlockPos> network = new HashSet<>(); // Кэш всех кабелей в сети

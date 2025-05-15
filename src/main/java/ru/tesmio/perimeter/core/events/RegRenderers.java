@@ -13,7 +13,7 @@ import ru.tesmio.perimeter.Perimeter;
 import ru.tesmio.perimeter.blocks.devices.redstonecable.RedstoneCableRenderer;
 import ru.tesmio.perimeter.blocks.devices.spotlight.SpotlightRenderer;
 import ru.tesmio.perimeter.blocks.devices.vibrocable.renderer.VibrationCableRenderer;
-import ru.tesmio.perimeter.core.RegBlockEntitys;
+import ru.tesmio.perimeter.core.registration.RegBlockEntitys;
 
 import java.io.IOException;
 

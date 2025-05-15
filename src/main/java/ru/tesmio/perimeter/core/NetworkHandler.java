@@ -7,7 +7,12 @@ import ru.tesmio.perimeter.Perimeter;
 import ru.tesmio.perimeter.network.packets.AreaSensorPacket;
 import ru.tesmio.perimeter.network.packets.AreaSensorPacketClient;
 
-
+/**
+ * "Классы-неклассы туда-сюда движения, не обессудь ежжи" (c)
+ * Client-server interaction
+ *
+ * @author Tesmio
+ */
 public class NetworkHandler {
     public static final SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
             new ResourceLocation(Perimeter.MODID, "main"),

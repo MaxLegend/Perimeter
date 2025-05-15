@@ -18,12 +18,12 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.tesmio.perimeter.core.RegBlockEntitys;
-import ru.tesmio.perimeter.util.IPerimeterDevice;
+import ru.tesmio.perimeter.core.registration.RegBlockEntitys;
+import ru.tesmio.perimeter.util.IConnectedToPostDevice;
 
 import java.util.ArrayList;
 
-public class RedstoneCableBlock extends Block implements EntityBlock, IPerimeterDevice {
+public class RedstoneCableBlock extends Block implements EntityBlock, IConnectedToPostDevice {
 
     public static final DirectionProperty ATTACHED_FACE = BlockStateProperties.FACING;
     public static final IntegerProperty POWER = BlockStateProperties.POWER;

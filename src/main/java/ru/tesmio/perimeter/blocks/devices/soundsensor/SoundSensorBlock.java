@@ -25,9 +25,9 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.tesmio.perimeter.util.IPerimeterDevice;
+import ru.tesmio.perimeter.util.IConnectedToPostDevice;
 
-public class SoundSensorBlock extends Block implements EntityBlock, IPerimeterDevice {
+public class SoundSensorBlock extends Block implements EntityBlock, IConnectedToPostDevice {
     public static final BooleanProperty ACTIVATED = BooleanProperty.create("activated");
     public static final EnumProperty<EnumSoundMode> MODE = EnumProperty.create("mode", EnumSoundMode.class);
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;

@@ -1,4 +1,4 @@
-package ru.tesmio.perimeter.core;
+package ru.tesmio.perimeter.core.registration;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;

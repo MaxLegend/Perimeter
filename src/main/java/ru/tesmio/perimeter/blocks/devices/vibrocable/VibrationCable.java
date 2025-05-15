@@ -26,7 +26,7 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.tesmio.perimeter.blocks.devices.vibrocable.network.VibrationNetworkSystem;
+import ru.tesmio.perimeter.core.blocknetwork.BlockNetworkSystem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -182,14 +182,14 @@ public class VibrationCable extends Block implements EntityBlock {
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
         if (!level.isClientSide) {
-            VibrationNetworkSystem.get(level).onBlockAdded(level, pos);
+            BlockNetworkSystem.get(level).onBlockAdded(level, pos);
         }
     }
 
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         if (!level.isClientSide && !state.is(newState.getBlock())) {
-            VibrationNetworkSystem.get(level).onBlockRemoved(level, pos);
+            BlockNetworkSystem.get(level).onBlockRemoved(level, pos);
         }
         super.onRemove(state, level, pos, newState, isMoving);
     }

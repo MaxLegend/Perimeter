@@ -3,7 +3,14 @@ package ru.tesmio.perimeter.core;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
+import ru.tesmio.perimeter.core.registration.RegBlocks;
 
+/**
+ * The constants are defined here. See registration here ->
+ *
+ * @author Tesmio
+ * @see RegBlocks
+ */
 public class PerimeterBlocks {
     //cube blocks
     public static RegistryObject<Block>
@@ -44,6 +51,8 @@ public class PerimeterBlocks {
             VIBRO_CABLE_BLOCK,
             VIBRO_CONTROLLER_BLOCK,
             SOUND_SENSOR,
+            CONTACT_FENCE,
+            CONTACT_FENCE_EMITTER,
             LINEAR_SENSOR_RECEIVER;
 
     public static RegistryObject<Item>
@@ -55,5 +64,7 @@ public class PerimeterBlocks {
             VIBRO_CABLE_ITEM,
             VIBRO_CONTROLLER_ITEM,
             SOUND_SENSOR_ITEM,
+            CONTACT_FENCE_ITEM,
+            CONTACT_FENCE_EMITTER_ITEM,
             REDSTONE_CABLE_ITEM;
 }

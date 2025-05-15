@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
-import ru.tesmio.perimeter.core.RegMenus;
+import ru.tesmio.perimeter.core.registration.RegMenus;
 
 public class ConcreteChestMenu extends AbstractContainerMenu {
     private final BlockEntity blockEntity;

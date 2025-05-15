@@ -4,7 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import ru.tesmio.perimeter.core.RegBlockEntitys;
+import ru.tesmio.perimeter.core.registration.RegBlockEntitys;
 
 public class SoundSensorBlockEntity extends BlockEntity {
     private SoundSensorBlock.EnumSoundMode mode = SoundSensorBlock.EnumSoundMode.ALL;

@@ -12,7 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import ru.tesmio.perimeter.Perimeter;
 import ru.tesmio.perimeter.core.PerimeterBlocks;
-import ru.tesmio.perimeter.core.RegBlocks;
+import ru.tesmio.perimeter.core.registration.RegBlocks;
 
 public class BlockStateGenerator extends BlockStateProvider {
     public BlockStateGenerator(PackOutput output, ExistingFileHelper exFileHelper) {

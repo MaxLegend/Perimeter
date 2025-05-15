@@ -1,4 +1,4 @@
-package ru.tesmio.perimeter.core;
+package ru.tesmio.perimeter.core.registration;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -8,6 +8,8 @@ import net.minecraftforge.registries.RegistryObject;
 import ru.tesmio.perimeter.Perimeter;
 import ru.tesmio.perimeter.blocks.concretechest.ConcreteChestEntity;
 import ru.tesmio.perimeter.blocks.devices.areasensor.AreaSensorEntity;
+import ru.tesmio.perimeter.blocks.devices.contactfence.ContactFenceEmitterEntity;
+import ru.tesmio.perimeter.blocks.devices.contactfence.ContactFenceEntity;
 import ru.tesmio.perimeter.blocks.devices.linearsensor.LinearReceiverEntity;
 import ru.tesmio.perimeter.blocks.devices.linearsensor.LinearTransmitterEntity;
 import ru.tesmio.perimeter.blocks.devices.redstonecable.RedstoneCableEntity;
@@ -16,6 +18,7 @@ import ru.tesmio.perimeter.blocks.devices.soundsensor.SoundSensorBlockEntity;
 import ru.tesmio.perimeter.blocks.devices.spotlight.SpotlightEntity;
 import ru.tesmio.perimeter.blocks.devices.vibrocable.VibrationCableEntity;
 import ru.tesmio.perimeter.blocks.devices.vibrocable.VibrationControllerEntity;
+import ru.tesmio.perimeter.core.PerimeterBlocks;
 
 public class RegBlockEntitys {
 
@@ -54,6 +57,12 @@ public class RegBlockEntitys {
     public static final RegistryObject<BlockEntityType<SoundSensorBlockEntity>> SOUND_SENSOR_ENTITY =
             BLOCK_ENTITIES.register("sound_sensor_entity",
                     () -> BlockEntityType.Builder.of(SoundSensorBlockEntity::new, PerimeterBlocks.SOUND_SENSOR.get()).build(null));
+    public static final RegistryObject<BlockEntityType<ContactFenceEntity>> CONTACT_FENCE_ENTITY =
+            BLOCK_ENTITIES.register("contact_fence_entity",
+                    () -> BlockEntityType.Builder.of(ContactFenceEntity::new, PerimeterBlocks.CONTACT_FENCE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<ContactFenceEmitterEntity>> CONTACT_FENCE_EMITTER_ENTITY =
+            BLOCK_ENTITIES.register("contact_fence_emitter_entity",
+                    () -> BlockEntityType.Builder.of(ContactFenceEmitterEntity::new, PerimeterBlocks.CONTACT_FENCE_EMITTER.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

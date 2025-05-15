@@ -10,7 +10,7 @@ import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import ru.tesmio.perimeter.blocks.devices.areasensor.AreaSensorEntity;
-import ru.tesmio.perimeter.core.RegMenus;
+import ru.tesmio.perimeter.core.registration.RegMenus;
 
 public class AreaSensorMenu extends AbstractContainerMenu {
     private final BlockPos blockPos;

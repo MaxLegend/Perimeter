@@ -1,4 +1,4 @@
-package ru.tesmio.perimeter.core;
+package ru.tesmio.perimeter.core.registration;
 
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -9,6 +9,7 @@ import ru.tesmio.perimeter.Perimeter;
 import ru.tesmio.perimeter.blocks.devices.linearsensor.LinearSensorLinker;
 import ru.tesmio.perimeter.blocks.devices.redstonecable.RedstoneCableConnector;
 import ru.tesmio.perimeter.blocks.devices.redstonecircuit.CircuitComponents;
+import ru.tesmio.perimeter.core.PerimeterItems;
 import ru.tesmio.perimeter.items.CircuitComponent;
 
 import java.util.function.Supplier;

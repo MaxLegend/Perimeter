@@ -13,9 +13,9 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.tesmio.perimeter.util.IPerimeterDevice;
+import ru.tesmio.perimeter.util.IConnectedToPostDevice;
 
-public class LampBlock extends Block implements IPerimeterDevice {
+public class LampBlock extends Block implements IConnectedToPostDevice {
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
 
     public LampBlock() {

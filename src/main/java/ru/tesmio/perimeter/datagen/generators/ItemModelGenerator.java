@@ -11,16 +11,18 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import ru.tesmio.perimeter.Perimeter;
-import ru.tesmio.perimeter.core.RegBlocks;
-import ru.tesmio.perimeter.core.RegItems;
+import ru.tesmio.perimeter.core.registration.RegBlocks;
+import ru.tesmio.perimeter.core.registration.RegItems;
 
 import java.util.LinkedHashMap;
 
 public class ItemModelGenerator extends ItemModelProvider {
     private static LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
+
     public ItemModelGenerator(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, Perimeter.MODID, existingFileHelper);
     }
+
     @Override
     protected void registerModels() {
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
@@ -38,6 +40,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         defaultItemGenerator(itemGenerated);
         defaultItemBlockGenerator();
     }
+
     private void defaultItemGenerator(ModelFile parent) {
         for (RegistryObject<Item> item : RegItems.ITEMS.getEntries()) {
             String name = ForgeRegistries.ITEMS.getKey(item.get()).getPath();
@@ -47,9 +50,11 @@ public class ItemModelGenerator extends ItemModelProvider {
                     .texture("layer0", modLoc("item/" + name));
         }
     }
+
     private void manualItemWoodFenceGenerator(String name) {
         getBuilder(name + "_paling_fence").parent(getExistingFile(modLoc("block/" + name + "_center")));
     }
+
     private void defaultItemBlockGenerator() {
         for (RegistryObject<Block> block : RegBlocks.BLOCKS.getEntries()) {
             String name = ForgeRegistries.BLOCKS.getKey(block.get()).getPath();

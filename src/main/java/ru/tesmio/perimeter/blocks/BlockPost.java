@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.tesmio.perimeter.util.IPerimeterDevice;
+import ru.tesmio.perimeter.util.IConnectedToPostDevice;
 
 public class BlockPost extends Block {
     public static final EnumProperty<PillarState> STATE = EnumProperty.create("state", PillarState.class);
@@ -141,7 +141,7 @@ public class BlockPost extends Block {
             BlockPos neighborPos = pos.relative(direction);
             BlockState neighborState = level.getBlockState(neighborPos);
 
-            boolean canConnect = neighborState.getBlock() instanceof IPerimeterDevice;
+            boolean canConnect = neighborState.getBlock() instanceof IConnectedToPostDevice;
             newState = setConnectionState(newState, direction, canConnect);
         }
 
