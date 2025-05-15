@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "perimeter:concrete_block"
+    },
+    "S": {
+      "item": "perimeter:iron_rod"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SRS",
+    "SSS"
+  ],
+  "result": {
+    "count": 4,
+    "item": "perimeter:armored_concrete_column"
+  },
+  "show_notification": true
+}

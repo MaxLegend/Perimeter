@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "perimeter:concrete_block"
+    },
+    "S": {
+      "item": "perimeter:iron_rod"
+    }
+  },
+  "pattern": [
+    "SDS",
+    "DRD",
+    "SDS"
+  ],
+  "result": {
+    "count": 4,
+    "item": "perimeter:armored_concrete_wall"
+  },
+  "show_notification": true
+}
