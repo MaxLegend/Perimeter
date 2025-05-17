@@ -17,13 +17,14 @@ public class AreaSensorSliderButton extends AbstractSliderButton {
 
     @Override
     protected void updateMessage() {
-        int val = 1 + (int)(value * 7);
+        int val = 1 + (int) (value * 7);
         setMessage(Component.literal("Range: " + val));
     }
 
     @Override
     protected void applyValue() {
-        int val = 1 + (int)(value * 7);
+        value = Math.round(value * 7) / 7.0;
+        int val = 1 + (int) (value * 7);
         onValueChanged.accept(val);
         updateMessage();
     }

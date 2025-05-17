@@ -36,6 +36,7 @@ public class Perimeter {
         RegBlocks.register(modEventBus);
         RegBlockEntitys.register(modEventBus);
         RegMenus.register(modEventBus);
+        RegSounds.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::onClientSetup);
         modEventBus.addListener(this::addCreative);

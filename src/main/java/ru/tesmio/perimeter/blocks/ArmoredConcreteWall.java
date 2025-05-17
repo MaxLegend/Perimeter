@@ -12,13 +12,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.tesmio.perimeter.util.VoxelShapeUtil;
+import ru.tesmio.perimeter.util.ShapesUtil;
+
 
 public class ArmoredConcreteWall extends HorizontalDirectionalBlock {
-    final VoxelShape BOXS[] = new VoxelShape[] {Block.box(0D, 0D, 3.5D, 16D, 16D, 12.5D),
+    final VoxelShape BOXS[] = new VoxelShape[]{Block.box(0D, 0D, 3.5D, 16D, 16D, 12.5D),
             Block.box(0D, 0D, 3.5D, 16D, 16D, 12.5D),
             Block.box(3.5D, 0D, 0D, 12.5D, 16D, 16D),
             Block.box(3.5D, 0D, 0D, 12.5D, 16D, 16D)};
+
     public ArmoredConcreteWall() {
         super(BlockBehaviour.Properties
                 .of()
@@ -27,9 +29,11 @@ public class ArmoredConcreteWall extends HorizontalDirectionalBlock {
                 .requiresCorrectToolForDrops()
         );
     }
+
     public RenderShape getRenderShape(BlockState s) {
         return RenderShape.MODEL;
     }
+
     public VoxelShape getShape(BlockState s, BlockGetter g, BlockPos p, CollisionContext c) {
         switch (s.getValue(FACING)) {
             case NORTH:
@@ -41,7 +45,7 @@ public class ArmoredConcreteWall extends HorizontalDirectionalBlock {
             case EAST:
                 return BOXS[3];
         }
-        return VoxelShapeUtil.FULL_CUBE;
+        return ShapesUtil.FULL_CUBE;
     }
 
     @Override

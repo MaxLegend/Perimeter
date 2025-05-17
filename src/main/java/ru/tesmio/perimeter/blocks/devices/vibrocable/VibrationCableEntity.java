@@ -38,6 +38,11 @@ public class VibrationCableEntity extends BlockEntity implements IBlockNetworkMe
 
     }
 
+    @Override
+    public AABB getRenderBoundingBox() {
+        return super.getRenderBoundingBox().inflate(1.3f);
+    }
+
     public boolean isVibrationSignalActive() {
         return active;
     }

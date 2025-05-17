@@ -14,6 +14,7 @@ public class PerimeterItems {
     public static RegistryObject<Item>
             RAW_IRON_ROD,
             IRON_ROD,
+            LENS, LAMP,
             LINEAR_SENSOR_LINKER,
             REDSTONE_CABLE_ITEM;
     public static RegistryObject<Item>

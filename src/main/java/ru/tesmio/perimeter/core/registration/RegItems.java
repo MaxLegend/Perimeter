@@ -26,10 +26,12 @@ public class RegItems {
         PerimeterItems.LIGHT_CIRCUIT = registerItem("light_circuit", () -> new Item(new Item.Properties()));
         PerimeterItems.SIGNAL_CIRCUIT = registerItem("signal_circuit", () -> new Item(new Item.Properties()));
 
+        PerimeterItems.LENS = registerItem("lens", () -> new Item(new Item.Properties()));
+        PerimeterItems.LAMP = registerItem("lamp_item", () -> new Item(new Item.Properties()));
         PerimeterItems.IRON_ROD = registerItem("iron_rod", () -> new Item(new Item.Properties()));
         PerimeterItems.RAW_IRON_ROD = registerItem("raw_iron_rod", () -> new Item(new Item.Properties()));
         PerimeterItems.LINEAR_SENSOR_LINKER = registerItem("linear_sensor_linker", () -> new LinearSensorLinker(new Item.Properties().stacksTo(1)));
-        PerimeterItems.REDSTONE_CABLE_ITEM = registerItem("redstone_cable_item", () -> new RedstoneCableConnector(new Item.Properties().stacksTo(1)));
+        PerimeterItems.REDSTONE_CABLE_ITEM = registerItem("redstone_cable_item", () -> new RedstoneCableConnector(new Item.Properties()));
 
     }
 

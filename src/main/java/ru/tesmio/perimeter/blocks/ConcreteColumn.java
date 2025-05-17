@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.tesmio.perimeter.util.VoxelShapeUtil;
+
 
 public class ConcreteColumn extends Block {
     public static final VoxelShape SHAPE =
@@ -39,6 +39,7 @@ public class ConcreteColumn extends Block {
                 .setValue(EAST, false)
                 .setValue(WEST, false));
     }
+
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         Level level = context.getLevel();
@@ -49,15 +50,17 @@ public class ConcreteColumn extends Block {
                 .setValue(EAST, connectsTo(level, pos.east()))
                 .setValue(WEST, connectsTo(level, pos.west()));
     }
+
     public VoxelShape getShape(BlockState s, BlockGetter g, BlockPos p, CollisionContext c) {
         return SHAPE;
     }
+
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
         return direction == Direction.NORTH ? state.setValue(NORTH, connectsTo(level, neighborPos)) :
                 direction == Direction.SOUTH ? state.setValue(SOUTH, connectsTo(level, neighborPos)) :
-                        direction == Direction.EAST  ? state.setValue(EAST, connectsTo(level, neighborPos)) :
-                                direction == Direction.WEST  ? state.setValue(WEST, connectsTo(level, neighborPos)) :
+                        direction == Direction.EAST ? state.setValue(EAST, connectsTo(level, neighborPos)) :
+                                direction == Direction.WEST ? state.setValue(WEST, connectsTo(level, neighborPos)) :
                                         state;
     }
 

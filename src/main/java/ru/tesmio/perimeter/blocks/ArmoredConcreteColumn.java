@@ -29,7 +29,7 @@ public class ArmoredConcreteColumn extends Block {
     public ArmoredConcreteColumn() {
         super(BlockBehaviour.Properties
                 .of()
-                .strength(42.5F, 16.0F)
+                .strength(42.5F, 340.0F)
                 .sound(SoundType.STONE)
                 .requiresCorrectToolForDrops());
         this.registerDefaultState(this.stateDefinition.any()
@@ -38,6 +38,7 @@ public class ArmoredConcreteColumn extends Block {
                 .setValue(EAST, false)
                 .setValue(WEST, false));
     }
+
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         Level level = context.getLevel();
@@ -53,19 +54,21 @@ public class ArmoredConcreteColumn extends Block {
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos currentPos, BlockPos neighborPos) {
         return direction == Direction.NORTH ? state.setValue(NORTH, connectsTo(level, neighborPos)) :
                 direction == Direction.SOUTH ? state.setValue(SOUTH, connectsTo(level, neighborPos)) :
-                        direction == Direction.EAST  ? state.setValue(EAST, connectsTo(level, neighborPos)) :
-                                direction == Direction.WEST  ? state.setValue(WEST, connectsTo(level, neighborPos)) :
+                        direction == Direction.EAST ? state.setValue(EAST, connectsTo(level, neighborPos)) :
+                                direction == Direction.WEST ? state.setValue(WEST, connectsTo(level, neighborPos)) :
                                         state;
     }
 
     private boolean connectsTo(LevelReader level, BlockPos pos) {
         BlockState state = level.getBlockState(pos);
-        return state.getBlock() instanceof ArmoredConcreteColumn|| state.getBlock() instanceof ArmoredConcreteWall
+        return state.getBlock() instanceof ArmoredConcreteColumn || state.getBlock() instanceof ArmoredConcreteWall
                 || state.getBlock() instanceof ConcreteWall || state.getBlock() instanceof ConcreteColumn;
     }
+
     public VoxelShape getShape(BlockState s, BlockGetter g, BlockPos p, CollisionContext c) {
         return SHAPE;
     }
+
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(NORTH, SOUTH, EAST, WEST);

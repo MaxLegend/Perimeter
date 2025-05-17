@@ -16,18 +16,18 @@ import ru.tesmio.perimeter.core.registration.RegBlockEntitys;
 
 import java.util.*;
 
-/**
- * Do not copy this class. I do not know how it works, but it works. :D
- *
- * @author Tesmio
- */
 public class RedstoneCableEntity extends BlockEntity {
-    private final List<BlockPos> connections = new ArrayList<>(); // Явные связи с другими кабелями
-    private final Set<BlockPos> network = new HashSet<>(); // Кэш всех кабелей в сети
-    private boolean networkDirty = true; // Флаг для обновления сети
+    
+    private final List<BlockPos> connections = new ArrayList<>();
+    private final Set<BlockPos> network = new HashSet<>();
+    private boolean networkDirty = true;
     private static final int MAX_CONNECTION_DISTANCE = 24;
     private static final int UPDATE_INTERVAL = 20;
     private int ticksSinceLastUpdate = 0;
+    private boolean isUpdating = false;
+    private int ticksWithoutInput = 0;
+    private static final int SIGNAL_LOSS_DELAY = 2;
+    private int cachedInputSignal = 0;
 
     public RedstoneCableEntity(BlockPos pos, BlockState state) {
         super(RegBlockEntitys.REDSTONE_CABLE_ENTITY.get(), pos, state);
@@ -38,12 +38,14 @@ public class RedstoneCableEntity extends BlockEntity {
     }
 
     public void addConnection(BlockPos target) {
-        if (connections.contains(target)) return;
-        if (connections.size() >= 3) return;
+        if (connections.contains(target)) {
+            return;
+        }
+        if (connections.size() >= 3) {
+            return;
+        }
 
-        // Проверка расстояния
         if (worldPosition.distSqr(target) > MAX_CONNECTION_DISTANCE * MAX_CONNECTION_DISTANCE) {
-
             return;
         }
 
@@ -51,11 +53,12 @@ public class RedstoneCableEntity extends BlockEntity {
         networkDirty = true;
         setChanged();
         syncToClient();
+
+
         BlockEntity be = level.getBlockEntity(target);
         if (be instanceof RedstoneCableEntity other) {
             mergeWithOtherNetwork(other);
         }
-        //       updateSignalInNetwork();
     }
 
     public void removeConnection(BlockPos target) {
@@ -63,13 +66,12 @@ public class RedstoneCableEntity extends BlockEntity {
             networkDirty = true;
             setChanged();
             syncToClient();
-
             invalidateNetwork();
-
             BlockEntity be = level.getBlockEntity(target);
             if (be instanceof RedstoneCableEntity cable) {
                 cable.invalidateNetwork();
             }
+        } else {
         }
     }
 
@@ -94,6 +96,7 @@ public class RedstoneCableEntity extends BlockEntity {
                 }
             }
         }
+
     }
 
     public void clearConnections() {
@@ -123,7 +126,6 @@ public class RedstoneCableEntity extends BlockEntity {
         return result;
     }
 
-    // Перестроение списка всех блоков в сети
     public void rebuildNetwork() {
         Set<BlockPos> visited = new HashSet<>();
         Queue<BlockPos> queue = new LinkedList<>();
@@ -145,25 +147,18 @@ public class RedstoneCableEntity extends BlockEntity {
 
         network.clear();
         network.addAll(visited);
-
     }
 
-    /**
-     * Стадия оценки: определяет максимальный сигнал от внешних источников.
-     */
     private int computeNetworkInputPower() {
         int maxInput = 0;
-
         for (BlockPos pos : network) {
             for (Direction dir : Direction.values()) {
                 BlockPos neighborPos = pos.relative(dir);
                 BlockState neighborState = level.getBlockState(neighborPos);
                 Block block = neighborState.getBlock();
 
-                // Пропускаем кабели
                 if (block instanceof RedstoneCableBlock) continue;
                 if (block instanceof RedStoneWireBlock) continue;
-
 
                 int signal = level.getSignal(neighborPos, dir.getOpposite());
                 if (signal > 0) {
@@ -171,7 +166,6 @@ public class RedstoneCableEntity extends BlockEntity {
                 }
             }
         }
-
         return maxInput;
     }
 
@@ -187,14 +181,10 @@ public class RedstoneCableEntity extends BlockEntity {
         }
     }
 
-    private boolean isUpdating = false;
-    private int ticksWithoutInput = 0;
-    private static final int SIGNAL_LOSS_DELAY = 2; // тик(и) ожидания перед сбросом сигнала
-    private int cachedInputSignal = 0; // последний подтверждённый входной сигнал
-
     public void updateSignalInNetwork() {
-
-        if (isUpdating) return; // защита от рекурсии
+        if (isUpdating) {
+            return;
+        }
         isUpdating = true;
         try {
             if (networkDirty) {
@@ -214,7 +204,6 @@ public class RedstoneCableEntity extends BlockEntity {
                 }
             }
 
-
             applySignalToNetwork(cachedInputSignal);
 
         } finally {
@@ -226,15 +215,12 @@ public class RedstoneCableEntity extends BlockEntity {
         Set<BlockPos> network1 = new HashSet<>(this.network);
         Set<BlockPos> network2 = new HashSet<>(other.network);
 
-        // Определяем какая сеть больше
         Set<BlockPos> larger = network1.size() >= network2.size() ? network1 : network2;
         Set<BlockPos> smaller = network1.size() < network2.size() ? network1 : network2;
 
-        // Объединённый результат
         Set<BlockPos> merged = new HashSet<>(larger);
         merged.addAll(smaller);
 
-        // Обновляем все участвующие блоки, не модифицируя исходный набор в процессе
         for (BlockPos pos : merged) {
             BlockEntity be = level.getBlockEntity(pos);
             if (be instanceof RedstoneCableEntity cable) {
@@ -248,13 +234,12 @@ public class RedstoneCableEntity extends BlockEntity {
     public static <T extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, T be) {
         if (!(be instanceof RedstoneCableEntity cable)) return;
         if (level.isClientSide) return;
+
         cable.ticksSinceLastUpdate++;
         if (cable.ticksSinceLastUpdate >= UPDATE_INTERVAL) {
             cable.ticksSinceLastUpdate = 0;
-
             cable.updateSignalInNetwork();
         }
-
     }
 
     public int getSignal() {
@@ -267,8 +252,7 @@ public class RedstoneCableEntity extends BlockEntity {
         }
     }
 
-
-    // ===== СЕРИАЛИЗАЦИЯ =====
+    // ===== SERIALIZATION =====
 
     @Override
     protected void saveAdditional(CompoundTag tag) {

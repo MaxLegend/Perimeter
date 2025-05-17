@@ -26,6 +26,7 @@ import ru.tesmio.perimeter.blocks.devices.soundsensor.SoundSensorBlock;
 import ru.tesmio.perimeter.blocks.devices.spotlight.SpotlightBlock;
 import ru.tesmio.perimeter.blocks.devices.vibrocable.VibrationCable;
 import ru.tesmio.perimeter.blocks.devices.vibrocable.VibrationController;
+import ru.tesmio.perimeter.blocks.devices.voltagefence.VoltageFence;
 import ru.tesmio.perimeter.core.PerimeterBlocks;
 import ru.tesmio.perimeter.items.DefaultBlockItemInfo;
 
@@ -40,8 +41,21 @@ public class RegBlocks {
 
     public static void init() {
         //cube blocks
-        PerimeterBlocks.CONCRETE_BLOCK = registerBlock("concrete_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
-        PerimeterBlocks.CONCRETE_BLOCK_CRACKED = registerBlock("concrete_block_old", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+        PerimeterBlocks.REINFORCED_BLOCK = registerBlock("reinforced_block", () -> new Block(BlockBehaviour.Properties
+                .of()
+                .strength(15.5F, 90.0F)
+                .sound(SoundType.STONE)
+                .requiresCorrectToolForDrops()));
+        PerimeterBlocks.SMOOTH_REINFORCED_BLOCK = registerBlock("s_reinforced_block", () -> new Block(BlockBehaviour.Properties
+                .of()
+                .strength(15.5F, 90.0F)
+                .sound(SoundType.STONE)
+                .requiresCorrectToolForDrops()));
+        PerimeterBlocks.CONCRETE_BLOCK = registerBlock("concrete_block", () -> new Block(BlockBehaviour.Properties
+                .of()
+                .strength(4.5F, 8.0F)
+                .sound(SoundType.STONE)
+                .requiresCorrectToolForDrops()));
 
         //simple blocks with model
         PerimeterBlocks.CONCRETE_WALL = registerBlockWithModel("concrete_wall", ConcreteWall::new);
@@ -89,6 +103,12 @@ public class RegBlocks {
         PerimeterBlocks.CONTACT_FENCE_ITEM = ITEM_BLOCKS.register("contact_fence", () -> new DefaultBlockItemInfo(PerimeterBlocks.CONTACT_FENCE.get(), new Item.Properties(), "info.contact_fence"));
         PerimeterBlocks.CONTACT_FENCE_EMITTER = BLOCKS_CUSTOM_MODEL.register("contact_fence_emitter", ContactFenceEmitter::new);
         PerimeterBlocks.CONTACT_FENCE_EMITTER_ITEM = ITEM_BLOCKS.register("contact_fence_emitter", () -> new DefaultBlockItemInfo(PerimeterBlocks.CONTACT_FENCE_EMITTER.get(), new Item.Properties(), "info.contact_fence_emitter"));
+        PerimeterBlocks.BARBED_FENCE = BLOCKS_CUSTOM_MODEL.register("barbed_fence", BarbFence::new);
+        PerimeterBlocks.BARBED_FENCE_ITEM = ITEM_BLOCKS.register("barbed_fence", () -> new DefaultBlockItemInfo(PerimeterBlocks.BARBED_FENCE.get(), new Item.Properties(), "info.barbed_fence"));
+        PerimeterBlocks.VOLTAGE_FENCE = BLOCKS_CUSTOM_MODEL.register("voltage_fence", VoltageFence::new);
+        PerimeterBlocks.VOLTAGE_FENCE_ITEM = ITEM_BLOCKS.register("voltage_fence", () -> new DefaultBlockItemInfo(PerimeterBlocks.VOLTAGE_FENCE.get(), new Item.Properties(), "info.voltage_fence"));
+        PerimeterBlocks.TECH_LAMP = BLOCKS_CUSTOM_MODEL.register("tech_lamp", TechLamp::new);
+        PerimeterBlocks.TECH_LAMP_ITEM = ITEM_BLOCKS.register("tech_lamp", () -> new DefaultBlockItemInfo(PerimeterBlocks.TECH_LAMP.get(), new Item.Properties(), "info.tech_lamp"));
 
     }
 

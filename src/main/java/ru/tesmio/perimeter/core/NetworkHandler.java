@@ -6,6 +6,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import ru.tesmio.perimeter.Perimeter;
 import ru.tesmio.perimeter.network.packets.AreaSensorPacket;
 import ru.tesmio.perimeter.network.packets.AreaSensorPacketClient;
+import ru.tesmio.perimeter.network.packets.CtrlPressedPacket;
 
 /**
  * "Классы-неклассы туда-сюда движения, не обессудь ежжи" (c)
@@ -34,7 +35,10 @@ public class NetworkHandler {
                 AreaSensorPacketClient::encode,
                 AreaSensorPacketClient::new,
                 AreaSensorPacketClient::handle);
-
+        INSTANCE.registerMessage(id++, CtrlPressedPacket.class,
+                CtrlPressedPacket::encode,
+                CtrlPressedPacket::new,
+                CtrlPressedPacket::handle);
 
     }
 }

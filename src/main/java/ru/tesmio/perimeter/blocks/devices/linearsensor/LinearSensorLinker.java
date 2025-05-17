@@ -34,6 +34,7 @@ public class LinearSensorLinker extends Item {
             CompoundTag tag = stack.getOrCreateTag();
             BlockEntity be = level.getBlockEntity(pos);
 
+            // Первый клик — сохраняем координаты трансмиттера
             if (!tag.contains("StoredX")) {
                 if (be instanceof LinearTransmitterEntity) {
                     tag.putInt("StoredX", pos.getX());
@@ -43,25 +44,47 @@ public class LinearSensorLinker extends Item {
                     return InteractionResult.SUCCESS;
                 }
             } else {
+                // Второй клик — пытаемся связать с ресивером
                 if (be instanceof LinearReceiverEntity receiver) {
                     BlockPos storedPos = new BlockPos(tag.getInt("StoredX"), tag.getInt("StoredY"), tag.getInt("StoredZ"));
                     BlockEntity transmitterBe = level.getBlockEntity(storedPos);
+
+                    // Удаляем координаты независимо от результата
+                    tag.remove("StoredX");
+                    tag.remove("StoredY");
+                    tag.remove("StoredZ");
+
                     if (transmitterBe instanceof LinearTransmitterEntity transmitter) {
+                        BlockPos currentLinkedTransmitter = receiver.getLinkedTransmitter();
+
+                        // Если ресивер уже связан с другим трансмиттером
+                        if (currentLinkedTransmitter != null && !currentLinkedTransmitter.equals(storedPos)) {
+                            context.getPlayer().displayClientMessage(Component.translatable("info.receiver_already_linked"), true);
+                            return InteractionResult.FAIL;
+                        }
+
+                        // Если они уже связаны друг с другом
+                        if (transmitter.isLinkedTo(pos) && currentLinkedTransmitter != null && currentLinkedTransmitter.equals(storedPos)) {
+                            context.getPlayer().displayClientMessage(Component.translatable("info.already_linked"), true);
+                            return InteractionResult.FAIL;
+                        }
+
+                        // Всё в порядке — устанавливаем связь
                         transmitter.setLinkedReceiver(pos);
                         receiver.setLinkedTransmitter(storedPos);
 
-                        //  Обновляем состояния на клиент
                         level.sendBlockUpdated(storedPos, transmitter.getBlockState(), transmitter.getBlockState(), 3);
                         level.sendBlockUpdated(pos, receiver.getBlockState(), receiver.getBlockState(), 3);
-
-                        tag.remove("StoredX");
-                        tag.remove("StoredY");
-                        tag.remove("StoredZ");
 
                         context.getPlayer().displayClientMessage(Component.translatable("info.link_estabilished"), true);
                         return InteractionResult.SUCCESS;
                     }
                 }
+
+                // Если второй клик был не по ресиверу — удалим координаты
+                tag.remove("StoredX");
+                tag.remove("StoredY");
+                tag.remove("StoredZ");
             }
         }
 

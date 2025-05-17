@@ -18,6 +18,7 @@ import ru.tesmio.perimeter.blocks.devices.soundsensor.SoundSensorBlockEntity;
 import ru.tesmio.perimeter.blocks.devices.spotlight.SpotlightEntity;
 import ru.tesmio.perimeter.blocks.devices.vibrocable.VibrationCableEntity;
 import ru.tesmio.perimeter.blocks.devices.vibrocable.VibrationControllerEntity;
+import ru.tesmio.perimeter.blocks.devices.voltagefence.VoltageFenceEntity;
 import ru.tesmio.perimeter.core.PerimeterBlocks;
 
 public class RegBlockEntitys {
@@ -63,6 +64,9 @@ public class RegBlockEntitys {
     public static final RegistryObject<BlockEntityType<ContactFenceEmitterEntity>> CONTACT_FENCE_EMITTER_ENTITY =
             BLOCK_ENTITIES.register("contact_fence_emitter_entity",
                     () -> BlockEntityType.Builder.of(ContactFenceEmitterEntity::new, PerimeterBlocks.CONTACT_FENCE_EMITTER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<VoltageFenceEntity>> VOLTAGE_FENCE_ENTITY =
+            BLOCK_ENTITIES.register("voltage_fence_entity",
+                    () -> BlockEntityType.Builder.of(VoltageFenceEntity::new, PerimeterBlocks.VOLTAGE_FENCE.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

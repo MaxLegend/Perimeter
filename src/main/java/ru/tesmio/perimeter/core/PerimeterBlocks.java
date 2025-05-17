@@ -14,8 +14,9 @@ import ru.tesmio.perimeter.core.registration.RegBlocks;
 public class PerimeterBlocks {
     //cube blocks
     public static RegistryObject<Block>
-            CONCRETE_BLOCK,
-            CONCRETE_BLOCK_CRACKED;
+            REINFORCED_BLOCK,
+            SMOOTH_REINFORCED_BLOCK,
+            CONCRETE_BLOCK;
 
     //simple blocks with model
     public static RegistryObject<Block>
@@ -53,6 +54,9 @@ public class PerimeterBlocks {
             SOUND_SENSOR,
             CONTACT_FENCE,
             CONTACT_FENCE_EMITTER,
+            BARBED_FENCE,
+            VOLTAGE_FENCE,
+            TECH_LAMP,
             LINEAR_SENSOR_RECEIVER;
 
     public static RegistryObject<Item>
@@ -65,6 +69,9 @@ public class PerimeterBlocks {
             VIBRO_CONTROLLER_ITEM,
             SOUND_SENSOR_ITEM,
             CONTACT_FENCE_ITEM,
+            BARBED_FENCE_ITEM,
+            VOLTAGE_FENCE_ITEM,
+            TECH_LAMP_ITEM,
             CONTACT_FENCE_EMITTER_ITEM,
             REDSTONE_CABLE_ITEM;
 }

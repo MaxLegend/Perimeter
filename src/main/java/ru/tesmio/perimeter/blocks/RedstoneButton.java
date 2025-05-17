@@ -2,6 +2,8 @@ package ru.tesmio.perimeter.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -17,6 +19,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.joml.Vector3f;
 import ru.tesmio.perimeter.util.IConnectedToPostDevice;
 
 public class RedstoneButton extends Block implements IConnectedToPostDevice {
@@ -67,6 +70,78 @@ public class RedstoneButton extends Block implements IConnectedToPostDevice {
             case DOWN -> Block.box(5, 12, 5, 11, 16, 11);
             case UP -> Block.box(5, 0, 5, 11, 4, 11);
         };
+    }
+
+    @Override
+    public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource random) {
+        super.animateTick(state, world, pos, random);
+        if (world.isClientSide && state.getValue(BlockStateProperties.POWERED)) {
+            Direction facing = state.getValue(BlockStateProperties.FACING);
+            double x = pos.getX() + 0.5;
+            double y = pos.getY() + 0.5;
+            double z = pos.getZ() + 0.5;
+
+            // Смещение к поверхности кнопки (6 пикселей = 0.375 блока)
+            double offset = 0.375;
+
+            // Случайное смещение в плоскости кнопки (6x6 пикселей = 0.375x0.375 блока)
+            double dx = (random.nextDouble() - 0.5) * 0.375;
+            double dy = (random.nextDouble() - 0.5) * 0.375;
+            double dz = (random.nextDouble() - 0.5) * 0.375;
+
+            // Применяем смещение в зависимости от направления кнопки
+            switch (facing) {
+                case DOWN -> {
+                    y += offset;
+                    x += dx;
+                    z += dz;
+                }
+                case UP -> {
+                    y -= offset;
+                    x += dx;
+                    z += dz;
+                }
+                case SOUTH -> {
+                    z -= offset;
+                    x += dx;
+                    y += dy;
+                }
+                case NORTH -> {
+                    z += offset;
+                    x += dx;
+                    y += dy;
+                }
+                case EAST -> {
+                    x -= offset;
+                    y += dy;
+                    z += dz;
+                }
+                case WEST -> {
+                    x += offset;
+                    y += dy;
+                    z += dz;
+                }
+            }
+
+            // Небольшое дополнительное смещение для эффекта "вращения"
+            double spinOffset = 0.05;
+            switch (facing.getAxis()) {
+                case X -> { // EAST/WEST
+                    z += Math.sin(world.getGameTime() * 0.1) * spinOffset;
+                    y += Math.cos(world.getGameTime() * 0.1) * spinOffset;
+                }
+                case Z -> { // NORTH/SOUTH
+                    x += Math.sin(world.getGameTime() * 0.1) * spinOffset;
+                    y += Math.cos(world.getGameTime() * 0.1) * spinOffset;
+                }
+                case Y -> { // UP/DOWN
+                    x += Math.sin(world.getGameTime() * 0.1) * spinOffset;
+                    z += Math.cos(world.getGameTime() * 0.1) * spinOffset;
+                }
+            }
+
+            world.addParticle(new DustParticleOptions(new Vector3f(1f, 0f, 0f), 1.0f), x, y, z, 0.0, 0.0, 0.0);
+        }
     }
 
     @Override

@@ -12,13 +12,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.tesmio.perimeter.util.VoxelShapeUtil;
+import ru.tesmio.perimeter.util.ShapesUtil;
+
 
 public class ConcreteWall extends HorizontalDirectionalBlock {
-   final VoxelShape BOXS[] = new VoxelShape[] {Block.box(0D, 0D, 6D, 16D, 16D, 10D),
+    final VoxelShape BOXS[] = new VoxelShape[]{Block.box(0D, 0D, 6D, 16D, 16D, 10D),
             Block.box(0D, 0D, 6D, 16D, 16D, 10D),
             Block.box(6D, 0D, 0D, 10D, 16D, 16D),
             Block.box(6D, 0D, 0D, 10D, 16D, 16D)};
+
     public ConcreteWall() {
         super(BlockBehaviour.Properties
                 .of()
@@ -27,9 +29,11 @@ public class ConcreteWall extends HorizontalDirectionalBlock {
                 .requiresCorrectToolForDrops()
         );
     }
+
     public RenderShape getRenderShape(BlockState s) {
         return RenderShape.MODEL;
     }
+
     public VoxelShape getShape(BlockState s, BlockGetter g, BlockPos p, CollisionContext c) {
         switch (s.getValue(FACING)) {
             case NORTH:
@@ -41,7 +45,7 @@ public class ConcreteWall extends HorizontalDirectionalBlock {
             case EAST:
                 return BOXS[3];
         }
-        return VoxelShapeUtil.FULL_CUBE;
+        return ShapesUtil.FULL_CUBE;
     }
 
     @Override

@@ -64,12 +64,12 @@ public class RedstoneCableBlock extends Block implements EntityBlock, IConnected
     @Override
     public VoxelShape getShape(BlockState s, BlockGetter g, BlockPos p, CollisionContext c) {
         return switch (s.getValue(ATTACHED_FACE)) {
-            case SOUTH -> SHAPES[1];
-            case NORTH -> SHAPES[0];
-            case WEST -> SHAPES[3];
-            case EAST -> SHAPES[2];
-            case DOWN -> SHAPES[5];
-            case UP -> SHAPES[4];
+            case SOUTH -> Block.box(6, 6, 0, 10, 10, 7);
+            case NORTH -> Block.box(6, 6, 9, 10, 10, 16);
+            case WEST -> Block.box(9, 6, 6, 16, 10, 10);
+            case EAST -> Block.box(0, 6, 6, 7, 10, 10);
+            case DOWN -> Block.box(6, 9, 6, 10, 16, 10);
+            case UP -> Block.box(6, 0, 6, 10, 7, 10);
         };
     }
 
@@ -80,7 +80,7 @@ public class RedstoneCableBlock extends Block implements EntityBlock, IConnected
             BlockEntity be = level.getBlockEntity(pos);
             if (be instanceof RedstoneCableEntity cable) {
 
-                //              cable.updateSignalInNetwork(); // Прямой вызов обновления
+                cable.updateSignalInNetwork(); // Прямой вызов обновления
             }
         }
     }

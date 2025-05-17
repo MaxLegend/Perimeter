@@ -24,10 +24,18 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
+import ru.tesmio.perimeter.util.ShapesUtil;
 
 public class ConcreteChestBlock extends Block implements EntityBlock {
     public static final BooleanProperty IS_OPEN = BooleanProperty.create("is_open");
     public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.HORIZONTAL);
+    public static final VoxelShape SHAPE_OPEN = Shapes.or(
+            Block.box(0.75, 0, 0.75, 15.25, 10, 15.25),
+            Block.box(1.25, 10, 1.25, 14.75, 11, 14.5));
+    public static final VoxelShape SHAPE = Shapes.or(
+            Block.box(0.75, 0, 0.75, 15.25, 10, 15.25),
+            Block.box(1.25, 10, 1.25, 14.75, 11, 14.5),
+            Block.box(0.5, 11, 0.75, 15.5, 16, 16));
 
     public ConcreteChestBlock() {
         super(Properties.of().strength(1.0F).noOcclusion());
@@ -41,47 +49,27 @@ public class ConcreteChestBlock extends Block implements EntityBlock {
 
             case NORTH:
                 if (s.getValue(IS_OPEN)) {
-                    yield Shapes.or(
-                            Block.box(0.75, 0, 0.75, 15.25, 10, 15.25),
-                            Block.box(1.25, 10, 1.25, 14.75, 11, 14.5));
+                    yield SHAPE_OPEN;
                 } else {
-                    yield Shapes.or(
-                            Block.box(0.75, 0, 0.75, 15.25, 10, 15.25),
-                            Block.box(1.25, 10, 1.25, 14.75, 11, 14.5),
-                            Block.box(0.5, 11, 0.75, 15.5, 16, 16));
+                    yield SHAPE;
                 }
             case SOUTH:
                 if (s.getValue(IS_OPEN)) {
-                    yield Shapes.or(
-                            Block.box(0.75, 0, 0.75, 15.25, 10, 15.25),
-                            Block.box(1.25, 10, 1.5, 14.75, 11, 15.25));
+                    yield ShapesUtil.rotate(SHAPE_OPEN, ShapesUtil.RotationDegree.D180);
                 } else {
-                    yield Shapes.or(
-                            Block.box(0.75, 0, 0.75, 15.25, 10, 15.25),
-                            Block.box(1.25, 10, 1.25, 14.75, 11, 14.5),
-                            Block.box(0.5, 11, 0, 15.5, 16, 15.5));
-                }
-            case EAST:
-                if (s.getValue(IS_OPEN)) {
-                    yield Shapes.or(
-                            Block.box(0.75, 0, 0.75, 15.25, 10, 15.25),
-                            Block.box(1.25, 10, 1.5, 14.75, 11, 15.25));
-                } else {
-                    yield Shapes.or(
-                            Block.box(0.75, 0, 0.75, 15.25, 10, 15.25),
-                            Block.box(1.25, 10, 1.25, 14.75, 11, 14.5),
-                            Block.box(0.75, 11, 0.5, 16, 16, 15.5));
+                    yield ShapesUtil.rotate(SHAPE, ShapesUtil.RotationDegree.D180);
                 }
             case WEST:
                 if (s.getValue(IS_OPEN)) {
-                    yield Shapes.or(
-                            Block.box(0.75, 0, 0.75, 15.25, 10, 15.25),
-                            Block.box(1.25, 10, 1.5, 14.75, 11, 15.25));
+                    yield ShapesUtil.rotate(SHAPE_OPEN, ShapesUtil.RotationDegree.D90);
                 } else {
-                    yield Shapes.or(
-                            Block.box(0.75, 0, 0.75, 15.25, 10, 15.25),
-                            Block.box(1.25, 10, 1.25, 14.75, 11, 14.5),
-                            Block.box(0, 11, 0.5, 15.25, 16, 15.5));
+                    yield ShapesUtil.rotate(SHAPE, ShapesUtil.RotationDegree.D90);
+                }
+            case EAST:
+                if (s.getValue(IS_OPEN)) {
+                    yield ShapesUtil.rotate(SHAPE_OPEN, ShapesUtil.RotationDegree.D270);
+                } else {
+                    yield ShapesUtil.rotate(SHAPE, ShapesUtil.RotationDegree.D270);
                 }
             case UP:
             case DOWN:

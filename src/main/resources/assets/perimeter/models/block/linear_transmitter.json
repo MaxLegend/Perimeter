@@ -6,6 +6,7 @@
 		"1": "perimeter:block/d_aluminum",
 		"2": "perimeter:block/blue_metal",
 		"3": "perimeter:block/dsmooth_stone",
+		"4": "perimeter:block/d_red_metal",
 		"particle": "perimeter:block/white_plastic"
 	},
 	"elements": [
@@ -53,12 +54,12 @@
 			"to": [9, 9, 9],
 			"rotation": {"angle": 0, "axis": "x", "origin": [7, 5, 8]},
 			"faces": {
-				"north": {"uv": [6, 9, 8, 11], "texture": "#0"},
-				"east": {"uv": [3, 6, 6, 8], "texture": "#0"},
-				"south": {"uv": [3, 6, 5, 8], "texture": "#0"},
-				"west": {"uv": [3, 6, 6, 8], "texture": "#0"},
-				"up": {"uv": [3, 6, 5, 9], "texture": "#0"},
-				"down": {"uv": [3, 6, 5, 9], "texture": "#0"}
+				"north": {"uv": [6, 9, 8, 11], "texture": "#4"},
+				"east": {"uv": [3, 6, 6, 8], "texture": "#4"},
+				"south": {"uv": [3, 6, 5, 8], "texture": "#4"},
+				"west": {"uv": [3, 6, 6, 8], "texture": "#4"},
+				"up": {"uv": [3, 6, 5, 9], "texture": "#4"},
+				"down": {"uv": [3, 6, 5, 9], "texture": "#4"}
 			}
 		},
 		{
