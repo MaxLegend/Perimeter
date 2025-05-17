@@ -1,14 +1,15 @@
-// 1.20.1	2025-05-14T20:03:13.9667945	Item Models: perimeter
+// 1.20.1	2025-05-17T16:11:57.2099743	Item Models: perimeter
 d233f2213d8820f06785fb9a686acd0833ae19be assets/perimeter/models/item/acacia_paling_fence.json
 c6befcf4b466fa6c8dc767dc5a45fc5f5cf1711d assets/perimeter/models/item/bamboo_paling_fence.json
 63557cedf850a79cb9514a22134d67b434aa89aa assets/perimeter/models/item/birch_paling_fence.json
 0ac477f264f5d9e15bd84d59ee11dd8186a5fd52 assets/perimeter/models/item/cherry_paling_fence.json
 04a5a5cb7a1f07895fe5324e14d60549a9a9dc55 assets/perimeter/models/item/concrete_block.json
-e848a6a41ed4fe615808a5ea76d645932e26197f assets/perimeter/models/item/concrete_block_old.json
 c415c0605d386889e2bed8a3c08aace967ef2d30 assets/perimeter/models/item/crimson_paling_fence.json
 71074de1d0ccfeed37c9e4d87821d66fb63862aa assets/perimeter/models/item/dark_oak_paling_fence.json
 f2b17d6d45d96561c26d56b97c79de4b4d832f53 assets/perimeter/models/item/iron_rod.json
 e20369745222e891224d1096aaecc639c4d16408 assets/perimeter/models/item/jungle_paling_fence.json
+fd3f1c9538a389df6262740a593d60cdbd7af5ab assets/perimeter/models/item/lamp_item.json
+537ac1653f67dc104909f37e53e000c3b263a05d assets/perimeter/models/item/lens.json
 0bbc6a64cfeeafc595a2728af36ef38f10a39f21 assets/perimeter/models/item/light_circuit.json
 5068d6afbec4ab4a47af9e5ee4a3e8562c4dc0dc assets/perimeter/models/item/linear_sensor_linker.json
 3c4732d625e98b4f25e49c08f34da736df79aad8 assets/perimeter/models/item/mangrove_paling_fence.json
@@ -20,6 +21,8 @@ b5bc9408db9b6fa961c7e739c62b9fae9e1f5d49 assets/perimeter/models/item/redstone_c
 e6f3af74b2ff73102aa1709b8c4d3c083e079cc4 assets/perimeter/models/item/redstone_electrolamp.json
 2eadf505380fa9372cb609ebf1108eaf990084dd assets/perimeter/models/item/redstone_resistor.json
 c082f3f026641fe4f72971f7b36c0bc1f830440c assets/perimeter/models/item/redstone_transistor.json
+cbac33b4d0213c0ffd45f5e6caab0da55e851b5c assets/perimeter/models/item/reinforced_block.json
 2d5528441234f6b129c3cee4d27fe6a5fd732507 assets/perimeter/models/item/signal_circuit.json
 74cfbdf919d5b3310d18b72e5967a21a39e2346c assets/perimeter/models/item/spruce_paling_fence.json
+4248a778a9c9eda0c15ed7ed9adfb4ef537069b5 assets/perimeter/models/item/s_reinforced_block.json
 feefe1bfe7b1be4a63b44b2bb730e0d1c569c2c6 assets/perimeter/models/item/warped_paling_fence.json

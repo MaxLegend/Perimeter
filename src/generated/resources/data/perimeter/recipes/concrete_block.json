@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "R": {
       "item": "perimeter:iron_rod"
@@ -10,9 +10,7 @@
     }
   },
   "pattern": [
-    " R ",
-    "RSR",
-    " R "
+    "SR"
   ],
   "result": {
     "count": 2,

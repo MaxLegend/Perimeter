@@ -1,7 +1,10 @@
 {
   "variants": {
     "": {
-      "model": "perimeter:block/concrete_block"
+      "model": "perimeter:block/concrete_block", "x": 90,
+      "model": "perimeter:block/concrete_block", "y": 90,
+      "model": "perimeter:block/concrete_block", "y": 180,
+      "model": "perimeter:block/concrete_block", "y": 270
     }
   }
 }

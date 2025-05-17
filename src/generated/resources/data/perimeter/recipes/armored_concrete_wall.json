@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "D": {
       "item": "minecraft:iron_ingot"
     },
     "R": {
-      "item": "perimeter:concrete_block"
+      "item": "perimeter:reinforced_block"
     },
     "S": {
       "item": "perimeter:iron_rod"

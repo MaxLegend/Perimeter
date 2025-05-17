@@ -241,7 +241,7 @@ public class RecipeGenerator extends RecipeProvider implements IConditionBuilder
                 .define('A', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, PerimeterBlocks.VOLTAGE_FENCE.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, PerimeterBlocks.VOLTAGE_FENCE.get(), 4)
                 .pattern("ABA")
                 .pattern("AVA")
                 .define('B', Items.REDSTONE)
@@ -290,9 +290,10 @@ public class RecipeGenerator extends RecipeProvider implements IConditionBuilder
                 .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, PerimeterBlocks.SOUND_SENSOR.get(), 1)
                 .pattern("RTR")
-                .pattern("SSS")
+                .pattern("ASA")
                 .define('S', PerimeterItems.PROCESSING_CIRCUIT.get())
                 .define('R', PerimeterItems.REDSTONE_TRANSISTOR.get())
+                .define('A', PerimeterItems.REDSTONE_ELECTROLAMP.get())
                 .define('T', PerimeterItems.SIGNAL_CIRCUIT.get())
                 .unlockedBy(getHasName(PerimeterItems.SIGNAL_CIRCUIT.get()), has(PerimeterItems.SIGNAL_CIRCUIT.get()))
                 .save(pWriter);
@@ -321,7 +322,7 @@ public class RecipeGenerator extends RecipeProvider implements IConditionBuilder
                 .define('S', PerimeterItems.IRON_ROD.get())
                 .unlockedBy(getHasName(PerimeterItems.IRON_ROD.get()), has(PerimeterItems.IRON_ROD.get()))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, PerimeterBlocks.CONTACT_FENCE.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, PerimeterBlocks.CONTACT_FENCE.get(), 8)
                 .pattern("ASR")
                 .pattern("ASR")
                 .pattern("ASR")
