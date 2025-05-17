@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,is_open=false": { "model": "perimeter:block/concrete_chest", "x": 0, "y": 180 },
+    "facing=south,is_open=false": { "model": "perimeter:block/concrete_chest", "x": 0, "y": 0 },
+    "facing=west,is_open=false":  { "model": "perimeter:block/concrete_chest", "x": 0, "y": 90 },
+    "facing=east,is_open=false":  { "model": "perimeter:block/concrete_chest", "x": 0, "y": 270 },
+        "facing=north,is_open=true": { "model": "perimeter:block/concrete_chest_open", "x": 0, "y": 180 },
+    "facing=south,is_open=true": { "model": "perimeter:block/concrete_chest_open", "x": 0, "y": 0 },
+    "facing=west,is_open=true":  { "model": "perimeter:block/concrete_chest_open", "x": 0, "y": 90 },
+    "facing=east,is_open=true":  { "model": "perimeter:block/concrete_chest_open", "x": 0, "y": 270 }
+  }
+}

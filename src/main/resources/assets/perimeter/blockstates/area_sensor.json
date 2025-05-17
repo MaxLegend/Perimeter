@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=down":  { "model": "perimeter:block/areasensor/areasensor", "x": 90, "y": 0 },
+    "facing=up":    { "model": "perimeter:block/areasensor/areasensor", "x": 270, "y": 0 },
+    "facing=north": { "model": "perimeter:block/areasensor/areasensor", "x": 0, "y": 0 },
+    "facing=south": { "model": "perimeter:block/areasensor/areasensor", "x": 0, "y": 180 },
+    "facing=west":  { "model": "perimeter:block/areasensor/areasensor", "x": 0, "y": 270 },
+    "facing=east":  { "model": "perimeter:block/areasensor/areasensor", "x": 0, "y": 90 }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "itemGroup.tab_main": "Perimeter",
+  "item.perimeter.raw_iron_rod": "Сыромятное железо",
+  "item.perimeter.iron_rod": "Стальной стержень",
+  "block.perimeter.concrete_block": "Железобетонный блок",
+  "block.perimeter.concrete_wall": "Железобетонная стена",
+  "block.perimeter.armored_concrete_wall": "Армированная железобетонная стена",
+  "block.perimeter.concrete_column": "Железобетонная колонна",
+  "block.perimeter.armored_concrete_column": "Армированная железобетонная колонна",
+  "block.perimeter.area_sensor": "Инфракрасный датчик присутствия",
+  "info.area_sensor": "§7Излучает сигнал редстоуна если в указанном радиусе есть видимая сущность (не скрытая за стенами). §aПКМ§7 по блоку, чтобы изменить радиус"
+}

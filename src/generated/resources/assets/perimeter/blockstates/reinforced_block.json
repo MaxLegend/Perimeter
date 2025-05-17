@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "perimeter:block/reinforced_block"
+    }
+  }
+}

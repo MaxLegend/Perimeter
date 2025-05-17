@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=down,powered=false": {
+      "model": "perimeter:block/spotlight_block",
+      "x": 90,
+      "y": 0
+    },
+    "facing=up,powered=false": {
+      "model": "perimeter:block/spotlight_block",
+      "x": 270,
+      "y": 0
+    },
+    "facing=north,powered=false": {
+      "model": "perimeter:block/spotlight_block",
+      "x": 0,
+      "y": 0
+    },
+    "facing=south,powered=false": {
+      "model": "perimeter:block/spotlight_block",
+      "x": 0,
+      "y": 180
+    },
+    "facing=west,powered=false": {
+      "model": "perimeter:block/spotlight_block",
+      "x": 0,
+      "y": 270
+    },
+    "facing=east,powered=false": {
+      "model": "perimeter:block/spotlight_block",
+      "x": 0,
+      "y": 90
+    },
+    "facing=down,powered=true": {
+      "model": "perimeter:block/spotlight_block_on",
+      "x": 90,
+      "y": 0
+    },
+    "facing=up,powered=true": {
+      "model": "perimeter:block/spotlight_block_on",
+      "x": 270,
+      "y": 0
+    },
+    "facing=north,powered=true": {
+      "model": "perimeter:block/spotlight_block_on",
+      "x": 0,
+      "y": 0
+    },
+    "facing=south,powered=true": {
+      "model": "perimeter:block/spotlight_block_on",
+      "x": 0,
+      "y": 180
+    },
+    "facing=west,powered=true": {
+      "model": "perimeter:block/spotlight_block_on",
+      "x": 0,
+      "y": 270
+    },
+    "facing=east,powered=true": {
+      "model": "perimeter:block/spotlight_block_on",
+      "x": 0,
+      "y": 90
+    }
+  }
+}

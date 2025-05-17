@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": {
+      "item": "perimeter:iron_rod"
+    },
+    "C": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "ACA",
+    "ACA"
+  ],
+  "result": {
+    "count": 16,
+    "item": "perimeter:block_post"
+  },
+  "show_notification": true
+}

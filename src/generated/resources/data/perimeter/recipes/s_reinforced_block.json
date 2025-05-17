@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "perimeter:reinforced_block"
+    }
+  ],
+  "result": {
+    "item": "perimeter:s_reinforced_block"
+  }
+}

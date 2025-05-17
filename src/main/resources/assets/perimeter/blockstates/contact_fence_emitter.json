@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "down=true,powered=false": {
+      "model": "perimeter:block/contactfence/emitter"
+    },
+    "down=true,powered=true": {
+      "model": "perimeter:block/contactfence/emitter"
+    },
+    "down=false,powered=false": {
+      "model": "perimeter:block/contactfence/emitter_mid"
+    },
+    "down=false,powered=true": {
+      "model": "perimeter:block/contactfence/emitter_mid"
+    }
+  }
+}

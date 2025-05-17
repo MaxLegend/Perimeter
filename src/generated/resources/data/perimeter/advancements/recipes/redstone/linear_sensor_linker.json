@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_redstone_transistor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "perimeter:redstone_transistor"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "perimeter:linear_sensor_linker"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_redstone_transistor",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "perimeter:linear_sensor_linker"
+    ]
+  },
+  "sends_telemetry_event": false
+}

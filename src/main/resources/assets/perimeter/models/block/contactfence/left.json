@@ -1,0 +1,49 @@
+{
+	"credit": "Model by Tesmio",
+	"parent": "block/cube_all",
+	"textures": {
+		"3": "perimeter:block/d_red_metal",
+		"particle": "perimeter:block/d_aluminum"
+	},
+	"elements": [
+		{
+			"from": [8.75, 3.6, 15.1],
+			"to": [16, 3.85, 15.35],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16.75, 1.6, 17.1]},
+			"faces": {
+				"north": {"uv": [0, 0, 7.25, 0.25], "texture": "#3"},
+				"east": {"uv": [0, 0, 0.25, 0.25], "texture": "#3"},
+				"south": {"uv": [0, 0, 7.25, 0.25], "texture": "#3"},
+				"west": {"uv": [0, 0, 0.25, 0.25], "texture": "#3"},
+				"up": {"uv": [7.25, 0.25, 0, 0], "texture": "#3"},
+				"down": {"uv": [7.25, 0.25, 0, 0], "texture": "#3"}
+			}
+		},
+		{
+			"from": [8.75, 8.6, 15.1],
+			"to": [16, 8.85, 15.35],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16.75, 6.6, 17.1]},
+			"faces": {
+				"north": {"uv": [0, 0, 7.25, 0.25], "texture": "#3"},
+				"east": {"uv": [0, 0, 0.25, 0.25], "texture": "#3"},
+				"south": {"uv": [0, 0, 7.25, 0.25], "texture": "#3"},
+				"west": {"uv": [0, 0, 0.25, 0.25], "texture": "#3"},
+				"up": {"uv": [7.25, 0.25, 0, 0], "texture": "#3"},
+				"down": {"uv": [7.25, 0.25, 0, 0], "texture": "#3"}
+			}
+		},
+		{
+			"from": [8.75, 13.6, 15.1],
+			"to": [16, 13.85, 15.35],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16.75, 11.6, 17.1]},
+			"faces": {
+				"north": {"uv": [0, 0, 7.25, 0.25], "texture": "#3"},
+				"east": {"uv": [0, 0, 0.25, 0.25], "texture": "#3"},
+				"south": {"uv": [0, 0, 7.25, 0.25], "texture": "#3"},
+				"west": {"uv": [0, 0, 0.25, 0.25], "texture": "#3"},
+				"up": {"uv": [7.25, 0.25, 0, 0], "texture": "#3"},
+				"down": {"uv": [7.25, 0.25, 0, 0], "texture": "#3"}
+			}
+		}
+	]
+}
