@@ -1,21 +1,36 @@
-# Логи и служебные файлы
+# Игнорировать ВСЁ, кроме папки src/
+*
+!src/
+
+
+# Логи и временные файлы
 *.log
 logs/
 temp/
 
-# Файлы IDE
+# Файлы сборки и запуска
+/build/
+/out/
+/bin/
+*.class
+*.jar
+
+# Файлы IDE (IntelliJ, Eclipse)
 .idea/
 *.iml
-out/
-*.swp
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
 
-# Сборка
-target/
-build/
+# Gradle-специфичные файлы
 .gradle/
-*.jar
-*.war
-*.ear
+gradle/
+gradlew
+gradlew.bat
+gradle-wrapper.jar
 
 # Системные файлы
 .DS_Store
