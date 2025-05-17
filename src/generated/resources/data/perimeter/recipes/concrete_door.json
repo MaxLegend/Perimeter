@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "R": {
+      "item": "perimeter:reinforced_block"
+    },
+    "S": {
+      "item": "perimeter:concrete_block"
+    }
+  },
+  "pattern": [
+    "SR ",
+    "SRR",
+    "SR "
+  ],
+  "result": {
+    "item": "perimeter:concrete_door"
+  },
+  "show_notification": true
+}

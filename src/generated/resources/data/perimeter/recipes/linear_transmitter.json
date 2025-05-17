@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "A": {
+      "item": "minecraft:iron_ingot"
+    },
+    "B": {
+      "item": "minecraft:copper_ingot"
+    },
+    "C": {
+      "item": "perimeter:redstone_transistor"
+    },
+    "E": {
+      "item": "perimeter:signal_circuit"
+    },
+    "F": {
+      "item": "perimeter:redstone_electrolamp"
+    },
+    "G": {
+      "item": "perimeter:lens"
+    }
+  },
+  "pattern": [
+    "ABC",
+    "AEF",
+    "ABG"
+  ],
+  "result": {
+    "item": "perimeter:linear_transmitter"
+  },
+  "show_notification": true
+}

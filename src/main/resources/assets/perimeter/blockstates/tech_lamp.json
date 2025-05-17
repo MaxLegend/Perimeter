@@ -1,0 +1,20 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "power": "0"
+      },
+      "apply": {
+        "model": "perimeter:block/tech_lamp"
+      }
+    },
+    {
+      "when": {
+        "power": "!0"
+      },
+      "apply": {
+        "model": "perimeter:block/tech_lamp_on"
+      }
+    }
+  ]
+}

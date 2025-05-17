@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "C": {
+      "item": "minecraft:chest"
+    },
+    "R": {
+      "item": "perimeter:reinforced_block"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "RCR",
+    "RRR"
+  ],
+  "result": {
+    "item": "perimeter:concrete_chest"
+  },
+  "show_notification": true
+}

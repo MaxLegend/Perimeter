@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "A": {
+      "item": "minecraft:iron_nugget"
+    },
+    "S": {
+      "item": "perimeter:iron_rod"
+    }
+  },
+  "pattern": [
+    "AS ",
+    " SA",
+    "AS "
+  ],
+  "result": {
+    "item": "perimeter:barbed_fence"
+  },
+  "show_notification": true
+}

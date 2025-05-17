@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "B": {
+      "item": "perimeter:redstone_condenser"
+    },
+    "C": {
+      "item": "perimeter:light_circuit"
+    },
+    "D": {
+      "item": "perimeter:redstone_transistor"
+    },
+    "R": {
+      "item": "minecraft:redstone_lamp"
+    }
+  },
+  "pattern": [
+    "RB",
+    "CD"
+  ],
+  "result": {
+    "item": "perimeter:tech_lamp"
+  },
+  "show_notification": true
+}

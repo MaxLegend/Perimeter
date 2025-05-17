@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "S": {
+      "item": "perimeter:lamp_item"
+    },
+    "T": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "pattern": [
+    "R",
+    "S",
+    "T"
+  ],
+  "result": {
+    "item": "perimeter:redstone_electrolamp"
+  },
+  "show_notification": true
+}

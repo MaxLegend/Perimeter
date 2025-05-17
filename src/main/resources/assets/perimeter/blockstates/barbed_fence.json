@@ -1,0 +1,44 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "n": true
+      },
+      "apply": {
+        "model": "perimeter:block/barb_wire_side",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "s": true
+      },
+      "apply": {
+        "model": "perimeter:block/barb_wire_side",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "e": true
+      },
+      "apply": {
+        "model": "perimeter:block/barb_wire_side",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "w": true
+      },
+      "apply": {
+        "model": "perimeter:block/barb_wire_side"
+      }
+    },
+    {
+      "apply": {
+        "model": "perimeter:block/barb_wire"
+      }
+    }
+  ]
+}
