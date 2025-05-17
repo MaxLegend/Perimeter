@@ -1,8 +1,0 @@
-{
-  "parent": "perimeter:block/template/wood_fence_center",
-  "ambientocclusion": false,
-  "textures": {
-    "particle": "perimeter:block/birch_planks",
-    "texture": "perimeter:block/birch_planks"
-  }
-}

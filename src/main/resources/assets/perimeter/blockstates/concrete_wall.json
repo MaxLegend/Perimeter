@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=east":  { "model": "perimeter:block/concrete_wall", "y": 90},
-        "facing=west":  { "model": "perimeter:block/concrete_wall", "y": 270},
-        "facing=south": { "model": "perimeter:block/concrete_wall", "y": 180 },
-        "facing=north": { "model": "perimeter:block/concrete_wall", "y": 0 }
- }
-}

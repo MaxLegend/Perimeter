@@ -1,6 +1,0 @@
-{
-  "variants": {
-    "powered=false":  { "model": "perimeter:block/vibration_cable/vibration_controller" },
-    "powered=true":    { "model": "perimeter:block/vibration_cable/vibration_controller" }
-  }
-}
