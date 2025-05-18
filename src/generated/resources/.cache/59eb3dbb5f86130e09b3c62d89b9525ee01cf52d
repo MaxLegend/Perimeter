@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-17T16:11:57.2079682	Loot Tables
+// 1.20.1	2025-05-19T01:52:54.8179579	Loot Tables
 bce22ac39318d8339f0ce9a28c8685a605dbec95 data/perimeter/loot_tables/blocks/acacia_paling_fence.json
 7ee806030ee9b49d78f2bd410b77ed83e508cd13 data/perimeter/loot_tables/blocks/area_sensor.json
 bb3a297865f2be335b88e9db0c780a66cd6020a2 data/perimeter/loot_tables/blocks/armored_concrete_column.json
@@ -27,6 +27,7 @@ d864d55326dbe8c87d21d89b8e69c78add826f18 data/perimeter/loot_tables/blocks/mangr
 c4d0272fdee8bf64f9e65cfe9c3574e8313bdcfb data/perimeter/loot_tables/blocks/redstone_board.json
 7966858d4f5bc11cdf4e2140e27a190c7528c503 data/perimeter/loot_tables/blocks/redstone_button.json
 24be4ace219c64d7e1cfd46ec05b5629d83a583b data/perimeter/loot_tables/blocks/redstone_cable_block.json
+63d7c4588d87415a3ff491298e3687e567ff9fb7 data/perimeter/loot_tables/blocks/redstone_furnace.json
 94617bad21e5bcc08cb05a0b88b0a490c69955f1 data/perimeter/loot_tables/blocks/reinforced_block.json
 6db19e4fe22eb24532d30cecf21e34494220692e data/perimeter/loot_tables/blocks/sound_sensor.json
 a1965122f8f77abb44594a6ab1ac89351cd8daeb data/perimeter/loot_tables/blocks/spotlight_block.json

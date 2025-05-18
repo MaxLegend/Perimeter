@@ -2,6 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
+    "A": {
+      "item": "perimeter:redstone_electrolamp"
+    },
     "R": {
       "item": "perimeter:redstone_transistor"
     },
@@ -14,7 +17,7 @@
   },
   "pattern": [
     "RTR",
-    "SSS"
+    "ASA"
   ],
   "result": {
     "item": "perimeter:sound_sensor"

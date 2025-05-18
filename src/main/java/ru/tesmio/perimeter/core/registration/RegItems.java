@@ -11,6 +11,8 @@ import ru.tesmio.perimeter.blocks.devices.redstonecable.RedstoneCableConnector;
 import ru.tesmio.perimeter.blocks.devices.redstonecircuit.CircuitComponents;
 import ru.tesmio.perimeter.core.PerimeterItems;
 import ru.tesmio.perimeter.items.CircuitComponent;
+import ru.tesmio.perimeter.items.DefaultItemInfo;
+import ru.tesmio.perimeter.items.UpgradeSpeed;
 
 import java.util.function.Supplier;
 
@@ -32,7 +34,8 @@ public class RegItems {
         PerimeterItems.RAW_IRON_ROD = registerItem("raw_iron_rod", () -> new Item(new Item.Properties()));
         PerimeterItems.LINEAR_SENSOR_LINKER = registerItem("linear_sensor_linker", () -> new LinearSensorLinker(new Item.Properties().stacksTo(1)));
         PerimeterItems.REDSTONE_CABLE_ITEM = registerItem("redstone_cable_item", () -> new RedstoneCableConnector(new Item.Properties()));
-
+        PerimeterItems.UPGRADE_SPEED = registerItem("upgrade_speed", () -> new UpgradeSpeed("info.upgrade_speed"));
+        PerimeterItems.UPGRADE_SPACE = registerItem("upgrade_space", () -> new DefaultItemInfo(new Item.Properties(), "info.upgrade_space"));
     }
 
     private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<T> item) {

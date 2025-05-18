@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_reinforced_block": {
+    "has_redstone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "perimeter:reinforced_block"
+              "minecraft:redstone"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_reinforced_block",
+      "has_redstone",
       "has_the_recipe"
     ]
   ],

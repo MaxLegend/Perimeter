@@ -16,7 +16,8 @@ public class PerimeterItems {
             IRON_ROD,
             LENS, LAMP,
             LINEAR_SENSOR_LINKER,
-            REDSTONE_CABLE_ITEM;
+            REDSTONE_CABLE_ITEM,
+            UPGRADE_SPEED, UPGRADE_SPACE;
     public static RegistryObject<Item>
             REDSTONE_BOARD,
             PROCESSING_CIRCUIT,

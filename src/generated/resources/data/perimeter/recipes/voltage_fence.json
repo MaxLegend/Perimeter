@@ -17,6 +17,7 @@
     "AVA"
   ],
   "result": {
+    "count": 4,
     "item": "perimeter:voltage_fence"
   },
   "show_notification": true

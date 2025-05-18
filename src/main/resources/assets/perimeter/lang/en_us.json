@@ -95,5 +95,12 @@
   "info.tech_lamp": "§7Emits light with a power equal to the power of the §credstone§7 signal.",
   "info.receiver_already_linked": "This receiver is already connected!",
   "info.already_linked": "The connection has already been established.",
-  "rsconnector.positions.cleared": "Saved positions have been cleared."
+  "rsconnector.positions.cleared": "Saved positions have been cleared.",
+  "redstone_furnace.info.speed_up": "Upgrade: §bBooster (5x speed)",
+  "redstone_furnace.info.redstone_up": "§сRedstone §f(2x output)",
+  "redstone_furnace.info.space_up": "Upgrade: §6Space",
+  "info.upgrade_speed": "§7Speeds up processing by five times",
+  "info.upgrade_space": "§7Unlocks the redstone slot and the second processing line.",
+  "item.perimeter.upgrade_speed": "§bBooster",
+  "item.perimeter.upgrade_space": "§6Space"
 }

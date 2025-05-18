@@ -95,5 +95,12 @@
   "info.tech_lamp": "§7Светится уровнем света, равным сигналу §cредстоуна§7",
   "info.receiver_already_linked": "Этот приемник уже соединён!",
   "info.already_linked": "Соединение уже было установлено.",
-  "rsconnector.positions.cleared": "Сохраненные позиции сброшены."
+  "rsconnector.positions.cleared": "Сохраненные позиции сброшены.",
+  "redstone_furnace.info.speed_up": "Улучшение: §bФорсирование сигнала",
+  "redstone_furnace.info.redstone_up": "§cРедстоун §f(двойной выход ресурса)",
+  "redstone_furnace.info.space_up": "Улучшение: §6Вторая линия",
+  "info.upgrade_speed": "§7Ускоряет обработку в пять раз",
+  "info.upgrade_space": "§7Разблокирует вторую линию обработки и слот редстоуна",
+  "item.perimeter.upgrade_speed": "§bФорсирование сигнала",
+  "item.perimeter.upgrade_space": "§6Вторая линия"
 }
