@@ -1,0 +1,17 @@
+# Не игнорировать src и всё внутри неё
+!src/
+!src/**
+
+# Игнорировать остальное явно
+.gradle/
+.idea/
+build/
+gradle/
+run/
+run-data/
+
+*.log
+*.class
+*.jar
+desktop.ini
+*.png

@@ -13,6 +13,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import ru.tesmio.perimeter.blocks.concretechest.ConcreteChestScreen;
 import ru.tesmio.perimeter.blocks.devices.areasensor.screen.AreaSensorScreen;
+import ru.tesmio.perimeter.blocks.devices.redstonefurnace.RedstoneFurnaceScreen;
 import ru.tesmio.perimeter.core.NetworkHandler;
 import ru.tesmio.perimeter.core.events.ClientEvents;
 import ru.tesmio.perimeter.core.registration.*;
@@ -36,15 +37,17 @@ public class Perimeter {
         RegBlocks.register(modEventBus);
         RegBlockEntitys.register(modEventBus);
         RegMenus.register(modEventBus);
+        RegRecipes.register(modEventBus);
+
         RegSounds.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::onClientSetup);
         modEventBus.addListener(this::addCreative);
-        //   modEventBus.addListener(ClientEvents::onRenderWorldLast);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         NetworkHandler.register();
+
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -61,7 +64,7 @@ public class Perimeter {
         event.enqueueWork(() -> {
             MenuScreens.register(RegMenus.AREA_SENSOR_MENU.get(), AreaSensorScreen::new);
             MenuScreens.register(RegMenus.CONCRETE_CHEST_MENU.get(), ConcreteChestScreen::new);
-
+            MenuScreens.register(RegMenus.REDSTONE_FURNACE_MENU.get(), RedstoneFurnaceScreen::new);
         });
         MinecraftForge.EVENT_BUS.addListener(ClientEvents::onRenderWorldLast);
 

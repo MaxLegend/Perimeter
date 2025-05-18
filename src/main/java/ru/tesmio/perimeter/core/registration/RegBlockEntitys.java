@@ -14,6 +14,7 @@ import ru.tesmio.perimeter.blocks.devices.linearsensor.LinearReceiverEntity;
 import ru.tesmio.perimeter.blocks.devices.linearsensor.LinearTransmitterEntity;
 import ru.tesmio.perimeter.blocks.devices.redstonecable.RedstoneCableEntity;
 import ru.tesmio.perimeter.blocks.devices.redstonecircuit.RedstoneCircuitEntity;
+import ru.tesmio.perimeter.blocks.devices.redstonefurnace.RedstoneFurnaceEntity;
 import ru.tesmio.perimeter.blocks.devices.soundsensor.SoundSensorBlockEntity;
 import ru.tesmio.perimeter.blocks.devices.spotlight.SpotlightEntity;
 import ru.tesmio.perimeter.blocks.devices.vibrocable.VibrationCableEntity;
@@ -67,6 +68,9 @@ public class RegBlockEntitys {
     public static final RegistryObject<BlockEntityType<VoltageFenceEntity>> VOLTAGE_FENCE_ENTITY =
             BLOCK_ENTITIES.register("voltage_fence_entity",
                     () -> BlockEntityType.Builder.of(VoltageFenceEntity::new, PerimeterBlocks.VOLTAGE_FENCE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<RedstoneFurnaceEntity>> REDSTONE_FURNACE_ENTITY =
+            BLOCK_ENTITIES.register("redstone_furnace_entity",
+                    () -> BlockEntityType.Builder.of(RedstoneFurnaceEntity::new, PerimeterBlocks.REDSTONE_FURNACE.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

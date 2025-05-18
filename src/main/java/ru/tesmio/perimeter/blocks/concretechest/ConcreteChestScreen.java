@@ -10,7 +10,6 @@ import net.minecraft.world.entity.player.Inventory;
 import ru.tesmio.perimeter.Perimeter;
 
 public class ConcreteChestScreen extends AbstractContainerScreen<ConcreteChestMenu> {
-    // Текстура GUI (замените на свою)
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(Perimeter.MODID, "textures/gui/concrete_chest.png");
 
