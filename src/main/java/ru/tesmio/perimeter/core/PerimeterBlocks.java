@@ -58,6 +58,7 @@ public class PerimeterBlocks {
             VOLTAGE_FENCE,
             TECH_LAMP,
             REDSTONE_FURNACE,
+            REDSTONE_ACCUMULATOR,
             LINEAR_SENSOR_RECEIVER;
 
     public static RegistryObject<Item>
@@ -75,5 +76,6 @@ public class PerimeterBlocks {
             TECH_LAMP_ITEM,
             CONTACT_FENCE_EMITTER_ITEM,
             REDSTONE_FURNACE_ITEM,
+            REDSTONE_ACCUMULATOR_ITEM,
             REDSTONE_CABLE_ITEM;
 }

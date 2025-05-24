@@ -12,6 +12,7 @@ import ru.tesmio.perimeter.blocks.devices.contactfence.ContactFenceEmitterEntity
 import ru.tesmio.perimeter.blocks.devices.contactfence.ContactFenceEntity;
 import ru.tesmio.perimeter.blocks.devices.linearsensor.LinearReceiverEntity;
 import ru.tesmio.perimeter.blocks.devices.linearsensor.LinearTransmitterEntity;
+import ru.tesmio.perimeter.blocks.devices.redstoneaccumulator.RedstoneAccumulatorEntity;
 import ru.tesmio.perimeter.blocks.devices.redstonecable.RedstoneCableEntity;
 import ru.tesmio.perimeter.blocks.devices.redstonecircuit.RedstoneCircuitEntity;
 import ru.tesmio.perimeter.blocks.devices.redstonefurnace.RedstoneFurnaceEntity;
@@ -71,6 +72,9 @@ public class RegBlockEntitys {
     public static final RegistryObject<BlockEntityType<RedstoneFurnaceEntity>> REDSTONE_FURNACE_ENTITY =
             BLOCK_ENTITIES.register("redstone_furnace_entity",
                     () -> BlockEntityType.Builder.of(RedstoneFurnaceEntity::new, PerimeterBlocks.REDSTONE_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<RedstoneAccumulatorEntity>> REDSTONE_ACCUMULATOR_ENTITY =
+            BLOCK_ENTITIES.register("redstone_accumulator_entity",
+                    () -> BlockEntityType.Builder.of(RedstoneAccumulatorEntity::new, PerimeterBlocks.REDSTONE_ACCUMULATOR.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

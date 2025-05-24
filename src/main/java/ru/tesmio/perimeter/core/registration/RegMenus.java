@@ -13,6 +13,8 @@ import net.minecraftforge.registries.RegistryObject;
 import ru.tesmio.perimeter.Perimeter;
 import ru.tesmio.perimeter.blocks.concretechest.ConcreteChestMenu;
 import ru.tesmio.perimeter.blocks.devices.areasensor.screen.AreaSensorMenu;
+import ru.tesmio.perimeter.blocks.devices.redstoneaccumulator.RedstoneAccumulatorEntity;
+import ru.tesmio.perimeter.blocks.devices.redstoneaccumulator.RedstoneAccumulatorMenu;
 import ru.tesmio.perimeter.blocks.devices.redstonefurnace.RedstoneFurnaceEntity;
 import ru.tesmio.perimeter.blocks.devices.redstonefurnace.RedstoneFurnaceMenu;
 
@@ -29,6 +31,17 @@ public class RegMenus {
                         return new ConcreteChestMenu(windowId, inv, be);
                     })
             );
+    public static final RegistryObject<MenuType<RedstoneAccumulatorMenu>> ACCUMULATOR_MENU =
+            MENUS.register("accumulator_menu", () ->
+                    IForgeMenuType.create((windowId, inv, data) -> {
+                        BlockPos pos = data.readBlockPos(); // Получаем позицию сундука
+                        BlockEntity be = inv.player.level().getBlockEntity(pos);
+                        if (be instanceof RedstoneAccumulatorEntity e) {
+                            return new RedstoneAccumulatorMenu(windowId, inv, e);
+                        }
+                        return null;
+                    })
+            );
     public static final RegistryObject<MenuType<RedstoneFurnaceMenu>> REDSTONE_FURNACE_MENU =
             MENUS.register("redstone_furnace_menu", () ->
                     IForgeMenuType.create((windowId, inv, data) -> {
@@ -40,6 +53,7 @@ public class RegMenus {
                         return null;
                     })
             );
+
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));

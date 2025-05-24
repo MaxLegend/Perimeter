@@ -4,9 +4,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 import ru.tesmio.perimeter.Perimeter;
-import ru.tesmio.perimeter.network.packets.AreaSensorPacket;
-import ru.tesmio.perimeter.network.packets.AreaSensorPacketClient;
-import ru.tesmio.perimeter.network.packets.CtrlPressedPacket;
+import ru.tesmio.perimeter.network.packets.*;
 
 /**
  * "Классы-неклассы туда-сюда движения, не обессудь ежжи" (c)
@@ -39,6 +37,13 @@ public class NetworkHandler {
                 CtrlPressedPacket::encode,
                 CtrlPressedPacket::new,
                 CtrlPressedPacket::handle);
-
+        INSTANCE.registerMessage(id++, EnergySyncClientPacket.class,
+                EnergySyncClientPacket::encode,
+                EnergySyncClientPacket::decode,
+                EnergySyncClientPacket::handle);
+        INSTANCE.registerMessage(id++, AccumulatorPausedPacket.class,
+                AccumulatorPausedPacket::encode,
+                AccumulatorPausedPacket::decode,
+                AccumulatorPausedPacket::handle);
     }
 }
