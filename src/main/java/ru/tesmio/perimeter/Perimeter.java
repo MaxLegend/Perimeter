@@ -15,6 +15,7 @@ import ru.tesmio.perimeter.blocks.concretechest.ConcreteChestScreen;
 import ru.tesmio.perimeter.blocks.devices.areasensor.screen.AreaSensorScreen;
 import ru.tesmio.perimeter.blocks.devices.redstoneaccumulator.RedstoneAccumulatorScreen;
 import ru.tesmio.perimeter.blocks.devices.redstonefurnace.RedstoneFurnaceScreen;
+import ru.tesmio.perimeter.blocks.devices.redstoneworkbench.RedstoneWorkbenchScreen;
 import ru.tesmio.perimeter.core.NetworkHandler;
 import ru.tesmio.perimeter.core.events.ClientEvents;
 import ru.tesmio.perimeter.core.registration.*;
@@ -67,6 +68,7 @@ public class Perimeter {
             MenuScreens.register(RegMenus.CONCRETE_CHEST_MENU.get(), ConcreteChestScreen::new);
             MenuScreens.register(RegMenus.REDSTONE_FURNACE_MENU.get(), RedstoneFurnaceScreen::new);
             MenuScreens.register(RegMenus.ACCUMULATOR_MENU.get(), RedstoneAccumulatorScreen::new);
+            MenuScreens.register(RegMenus.WORKBENCH_MENU.get(), RedstoneWorkbenchScreen::new);
         });
         MinecraftForge.EVENT_BUS.addListener(ClientEvents::onRenderWorldLast);
 

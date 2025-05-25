@@ -19,7 +19,7 @@ public class PerimeterItems {
             REDSTONE_CABLE_ITEM,
             UPGRADE_SPEED, UPGRADE_SPACE;
     public static RegistryObject<Item>
-            REDSTONE_BOARD,
+            CRAFTING_TEMPLATE,
             PROCESSING_CIRCUIT,
             LIGHT_CIRCUIT,
             SIGNAL_CIRCUIT,

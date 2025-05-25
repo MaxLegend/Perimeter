@@ -24,6 +24,7 @@ import ru.tesmio.perimeter.blocks.devices.redstonecable.RedstoneCableBlock;
 import ru.tesmio.perimeter.blocks.devices.redstonecircuit.RedstoneCircuit;
 import ru.tesmio.perimeter.blocks.devices.redstonecircuit.RedstoneCircuitItem;
 import ru.tesmio.perimeter.blocks.devices.redstonefurnace.RedstoneFurnaceBlock;
+import ru.tesmio.perimeter.blocks.devices.redstoneworkbench.RedstoneWorkbench;
 import ru.tesmio.perimeter.blocks.devices.soundsensor.SoundSensorBlock;
 import ru.tesmio.perimeter.blocks.devices.spotlight.SpotlightBlock;
 import ru.tesmio.perimeter.blocks.devices.vibrocable.VibrationCable;
@@ -114,7 +115,9 @@ public class RegBlocks {
         PerimeterBlocks.REDSTONE_FURNACE = BLOCKS_CUSTOM_MODEL.register("redstone_furnace", RedstoneFurnaceBlock::new);
         PerimeterBlocks.REDSTONE_FURNACE_ITEM = ITEM_BLOCKS.register("redstone_furnace", () -> new DefaultBlockItemInfo(PerimeterBlocks.REDSTONE_FURNACE.get(), new Item.Properties(), "info.redstone_furnace"));
         PerimeterBlocks.REDSTONE_ACCUMULATOR = BLOCKS_CUSTOM_MODEL.register("redstone_accumulator", RedstoneAccumulator::new);
-        PerimeterBlocks.REDSTONE_ACCUMULATOR_ITEM = ITEM_BLOCKS.register("redstone_accumulator", () -> new DefaultBlockItemInfo(PerimeterBlocks.REDSTONE_ACCUMULATOR.get(), new Item.Properties(), "info.redstone_accumulator"));
+        //PerimeterBlocks.REDSTONE_ACCUMULATOR_ITEM = ITEM_BLOCKS.register("redstone_accumulator", () -> new DefaultBlockItemInfo(PerimeterBlocks.REDSTONE_ACCUMULATOR.get(), new Item.Properties(), "info.redstone_accumulator"));
+        PerimeterBlocks.REDSTONE_WORKBENCH = BLOCKS_CUSTOM_MODEL.register("redstone_workbench", RedstoneWorkbench::new);
+        PerimeterBlocks.REDSTONE_WORKBENCH_ITEM = ITEM_BLOCKS.register("redstone_workbench", () -> new DefaultBlockItemInfo(PerimeterBlocks.REDSTONE_WORKBENCH.get(), new Item.Properties(), "info.redstone_workbench"));
 
     }
 

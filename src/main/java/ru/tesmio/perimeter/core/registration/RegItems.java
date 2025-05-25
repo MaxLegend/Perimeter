@@ -11,6 +11,7 @@ import ru.tesmio.perimeter.blocks.devices.redstonecable.RedstoneCableConnector;
 import ru.tesmio.perimeter.blocks.devices.redstonecircuit.CircuitComponents;
 import ru.tesmio.perimeter.core.PerimeterItems;
 import ru.tesmio.perimeter.items.CircuitComponent;
+import ru.tesmio.perimeter.items.CraftingTemplateItem;
 import ru.tesmio.perimeter.items.DefaultItemInfo;
 import ru.tesmio.perimeter.items.UpgradeSpeed;
 
@@ -36,6 +37,8 @@ public class RegItems {
         PerimeterItems.REDSTONE_CABLE_ITEM = registerItem("redstone_cable_item", () -> new RedstoneCableConnector(new Item.Properties()));
         PerimeterItems.UPGRADE_SPEED = registerItem("upgrade_speed", () -> new UpgradeSpeed("info.upgrade_speed"));
         PerimeterItems.UPGRADE_SPACE = registerItem("upgrade_space", () -> new DefaultItemInfo(new Item.Properties(), "info.upgrade_space"));
+        PerimeterItems.CRAFTING_TEMPLATE = registerItem("crafting_template", CraftingTemplateItem::new);
+
     }
 
     private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<T> item) {

@@ -16,6 +16,7 @@ import ru.tesmio.perimeter.blocks.devices.redstoneaccumulator.RedstoneAccumulato
 import ru.tesmio.perimeter.blocks.devices.redstonecable.RedstoneCableEntity;
 import ru.tesmio.perimeter.blocks.devices.redstonecircuit.RedstoneCircuitEntity;
 import ru.tesmio.perimeter.blocks.devices.redstonefurnace.RedstoneFurnaceEntity;
+import ru.tesmio.perimeter.blocks.devices.redstoneworkbench.RedstoneWorkbenchEntity;
 import ru.tesmio.perimeter.blocks.devices.soundsensor.SoundSensorBlockEntity;
 import ru.tesmio.perimeter.blocks.devices.spotlight.SpotlightEntity;
 import ru.tesmio.perimeter.blocks.devices.vibrocable.VibrationCableEntity;
@@ -75,6 +76,9 @@ public class RegBlockEntitys {
     public static final RegistryObject<BlockEntityType<RedstoneAccumulatorEntity>> REDSTONE_ACCUMULATOR_ENTITY =
             BLOCK_ENTITIES.register("redstone_accumulator_entity",
                     () -> BlockEntityType.Builder.of(RedstoneAccumulatorEntity::new, PerimeterBlocks.REDSTONE_ACCUMULATOR.get()).build(null));
+    public static final RegistryObject<BlockEntityType<RedstoneWorkbenchEntity>> WORKBENCH_ENTITY =
+            BLOCK_ENTITIES.register("redstone_workbench_entity",
+                    () -> BlockEntityType.Builder.of(RedstoneWorkbenchEntity::new, PerimeterBlocks.REDSTONE_WORKBENCH.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

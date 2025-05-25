@@ -17,6 +17,8 @@ import ru.tesmio.perimeter.blocks.devices.redstoneaccumulator.RedstoneAccumulato
 import ru.tesmio.perimeter.blocks.devices.redstoneaccumulator.RedstoneAccumulatorMenu;
 import ru.tesmio.perimeter.blocks.devices.redstonefurnace.RedstoneFurnaceEntity;
 import ru.tesmio.perimeter.blocks.devices.redstonefurnace.RedstoneFurnaceMenu;
+import ru.tesmio.perimeter.blocks.devices.redstoneworkbench.RedstoneWorkbenchEntity;
+import ru.tesmio.perimeter.blocks.devices.redstoneworkbench.RedstoneWorkbenchMenu;
 
 public class RegMenus {
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(Registries.MENU, Perimeter.MODID);
@@ -45,7 +47,7 @@ public class RegMenus {
     public static final RegistryObject<MenuType<RedstoneFurnaceMenu>> REDSTONE_FURNACE_MENU =
             MENUS.register("redstone_furnace_menu", () ->
                     IForgeMenuType.create((windowId, inv, data) -> {
-                        BlockPos pos = data.readBlockPos(); // Получаем позицию сундука
+                        BlockPos pos = data.readBlockPos();
                         BlockEntity be = inv.player.level().getBlockEntity(pos);
                         if (be instanceof RedstoneFurnaceEntity furnace) {
                             return new RedstoneFurnaceMenu(windowId, inv, furnace);
@@ -53,7 +55,17 @@ public class RegMenus {
                         return null;
                     })
             );
-
+    public static final RegistryObject<MenuType<RedstoneWorkbenchMenu>> WORKBENCH_MENU =
+            MENUS.register("redstone_workbench_menu", () ->
+                    IForgeMenuType.create((windowId, inv, data) -> {
+                        BlockPos pos = data.readBlockPos();
+                        BlockEntity be = inv.player.level().getBlockEntity(pos);
+                        if (be instanceof RedstoneWorkbenchEntity furnace) {
+                            return new RedstoneWorkbenchMenu(windowId, inv, furnace);
+                        }
+                        return null;
+                    })
+            );
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));

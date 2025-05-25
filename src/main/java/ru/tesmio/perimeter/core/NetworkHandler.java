@@ -41,9 +41,6 @@ public class NetworkHandler {
                 EnergySyncClientPacket::encode,
                 EnergySyncClientPacket::decode,
                 EnergySyncClientPacket::handle);
-        INSTANCE.registerMessage(id++, AccumulatorPausedPacket.class,
-                AccumulatorPausedPacket::encode,
-                AccumulatorPausedPacket::decode,
-                AccumulatorPausedPacket::handle);
+
     }
 }
